@@ -1,0 +1,12 @@
+<module rename-to='simple-shooter'>
+  <inherits name='com.badlogic.gdx.backends.gdx_backends_gwt' />
+
+  <source path='core'/>
+  <source path='html'/>
+
+  <public path="resources" />
+
+  <entry-point class='com.netthreads.gdx.html.SimpleShooterHtml'/>
+  <set-configuration-property name="gdx.assetpath" value="${asset.input.dir},desktop/assets,../desktop/assets,../../../../desktop/assets/" />
+  <set-configuration-property name="gdx.assetoutputpath" value="${asset.output.dir},simple-shooter-1.0.7-SNAPSHOT,src/main/webapp,./" />
+</module>
