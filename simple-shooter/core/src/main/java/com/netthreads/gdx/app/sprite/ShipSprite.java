@@ -17,7 +17,7 @@
  * 
  */
 
-package com.netthreads.libgdx.app.sprite;
+package com.netthreads.gdx.app.sprite;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;

@@ -24,7 +24,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Pool;
 import com.netthreads.gdx.app.definition.AppActorEvents;
 import com.netthreads.gdx.app.definition.AppTextureDefinitions;
-import com.netthreads.libgdx.app.sprite.ExplosionSprite;
+import com.netthreads.gdx.app.sprite.ExplosionSprite;
 import com.netthreads.libgdx.director.AppInjector;
 import com.netthreads.libgdx.director.Director;
 import com.netthreads.libgdx.event.ActorEvent;

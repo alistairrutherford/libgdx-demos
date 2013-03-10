@@ -25,7 +25,7 @@ import com.badlogic.gdx.utils.Pool;
 import com.badlogic.gdx.utils.SnapshotArray;
 import com.netthreads.gdx.app.definition.AppActorEvents;
 import com.netthreads.gdx.app.definition.AppTextureDefinitions;
-import com.netthreads.libgdx.app.sprite.PulseSprite;
+import com.netthreads.gdx.app.sprite.PulseSprite;
 import com.netthreads.libgdx.director.AppInjector;
 import com.netthreads.libgdx.director.Director;
 import com.netthreads.libgdx.event.ActorEvent;

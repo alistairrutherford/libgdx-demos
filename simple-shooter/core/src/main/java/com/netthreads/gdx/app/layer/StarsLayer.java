@@ -23,7 +23,7 @@ import com.badlogic.gdx.Input.Orientation;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.netthreads.gdx.app.definition.AppTextureDefinitions;
-import com.netthreads.libgdx.app.sprite.BackgroundSprite;
+import com.netthreads.gdx.app.sprite.BackgroundSprite;
 import com.netthreads.libgdx.director.AppInjector;
 import com.netthreads.libgdx.scene.Layer;
 import com.netthreads.libgdx.texture.TextureCache;

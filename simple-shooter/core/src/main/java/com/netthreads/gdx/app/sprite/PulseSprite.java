@@ -17,7 +17,7 @@
  * 
  */
 
-package com.netthreads.libgdx.app.sprite;
+package com.netthreads.gdx.app.sprite;
 
 import aurelienribon.tweenengine.BaseTween;
 import aurelienribon.tweenengine.Tween;
