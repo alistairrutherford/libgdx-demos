@@ -23,7 +23,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Pool;
 import com.badlogic.gdx.utils.SnapshotArray;
-import com.netthreads.gdx.app.definition.AppActorEvents;
+import com.netthreads.gdx.app.definition.AppEvents;
 import com.netthreads.gdx.app.definition.AppTextureDefinitions;
 import com.netthreads.gdx.app.sprite.PulseSprite;
 import com.netthreads.libgdx.director.AppInjector;
@@ -137,11 +137,11 @@ public class PulseLayer extends Layer implements ActorEventObserver
 
 		switch (event.getId())
 		{
-		case AppActorEvents.EVENT_START_PULSE:
+		case AppEvents.EVENT_START_PULSE:
 			handleStartPulse(event.getActor());
 			handled = true;
 			break;
-		case AppActorEvents.EVENT_END_PULSE:
+		case AppEvents.EVENT_END_PULSE:
 			handleEndPulse(event.getActor());
 			handled = true;
 			break;

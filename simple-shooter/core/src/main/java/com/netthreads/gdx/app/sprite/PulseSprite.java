@@ -25,7 +25,7 @@ import aurelienribon.tweenengine.TweenCallback;
 import aurelienribon.tweenengine.equations.Quad;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.netthreads.gdx.app.definition.AppActorEvents;
+import com.netthreads.gdx.app.definition.AppEvents;
 import com.netthreads.libgdx.action.TweenAction;
 import com.netthreads.libgdx.director.AppInjector;
 import com.netthreads.libgdx.director.Director;
@@ -108,7 +108,7 @@ public class PulseSprite extends FrameSprite implements TweenCallback
 	public void onEvent(int eventType, BaseTween<?> source)
 	{
 		// Send notification that pulse has completed.
-		director.sendEvent(AppActorEvents.EVENT_END_PULSE, this);
+		director.sendEvent(AppEvents.EVENT_END_PULSE, this);
 	}
 
 }

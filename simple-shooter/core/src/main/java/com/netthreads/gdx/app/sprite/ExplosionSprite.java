@@ -21,7 +21,7 @@ package com.netthreads.gdx.app.sprite;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.netthreads.gdx.app.definition.AppActorEvents;
+import com.netthreads.gdx.app.definition.AppEvents;
 import com.netthreads.libgdx.director.AppInjector;
 import com.netthreads.libgdx.director.Director;
 import com.netthreads.libgdx.sprite.FrameSprite;
@@ -72,7 +72,7 @@ public class ExplosionSprite extends FrameSprite
 		{
 			// Ensure you have a handler for this or the event pool will fill
 			// up.
-			director.sendEvent(AppActorEvents.EVENT_END_EXPLOSION, this);
+			director.sendEvent(AppEvents.EVENT_END_EXPLOSION, this);
 		}
 	}
 

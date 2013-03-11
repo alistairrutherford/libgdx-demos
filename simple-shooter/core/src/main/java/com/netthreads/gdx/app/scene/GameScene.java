@@ -61,35 +61,35 @@ public class GameScene extends Scene
 		// ---------------------------------------------------------------
 		// Stars layer
 		// ---------------------------------------------------------------
-		starsLayer = new StarsLayer(this.getWidth(), this.getHeight());
+		starsLayer = new StarsLayer(getWidth(), getHeight());
 
 		addLayer(starsLayer);
 
 		// ---------------------------------------------------------------
 		// Pulse layer.
 		// ---------------------------------------------------------------
-		pulseLayer = new PulseLayer(this.getWidth(), this.getHeight());
+		pulseLayer = new PulseLayer(getWidth(), getHeight());
 
 		addLayer(pulseLayer);
 
 		// ---------------------------------------------------------------
 		// Asteroid Layer
 		// ---------------------------------------------------------------
-		asteroidLayer = new AsteroidLayer(this.getWidth(), this.getHeight());
+		asteroidLayer = new AsteroidLayer(getWidth(), getHeight());
 
 		addLayer(asteroidLayer);
 
 		// ---------------------------------------------------------------
 		// Explosion Layer
 		// ---------------------------------------------------------------
-		explosionLayer = new ExplosionLayer(this.getWidth(), this.getHeight());
+		explosionLayer = new ExplosionLayer(getWidth(), getHeight());
 
 		addLayer(explosionLayer);
 
 		// ---------------------------------------------------------------
 		// Ship layer
 		// ---------------------------------------------------------------
-		shipLayer = new ShipLayer(this.getWidth(), this.getHeight());
+		shipLayer = new ShipLayer(getWidth(), getHeight());
 
 		// Route input to layer.
 		getInputMultiplexer().addProcessor(shipLayer);
@@ -99,7 +99,7 @@ public class GameScene extends Scene
 		// ---------------------------------------------------------------
 		// Statistics layer
 		// ---------------------------------------------------------------
-		statsLayer = new StatsLayer(this.getWidth(), this.getHeight());
+		statsLayer = new StatsLayer(getWidth(), getHeight());
 
 		addLayer(statsLayer);
 	}

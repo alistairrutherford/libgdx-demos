@@ -28,7 +28,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.netthreads.gdx.app.core.SimpleShooter;
-import com.netthreads.gdx.app.definition.AppActorEvents;
+import com.netthreads.gdx.app.definition.AppEvents;
 import com.netthreads.gdx.app.definition.AppTextureDefinitions;
 import com.netthreads.libgdx.director.AppInjector;
 import com.netthreads.libgdx.director.Director;
@@ -146,7 +146,7 @@ public class AboutLayer extends Layer
 
 		if (keycode == Keys.BACK || keycode == Keys.ESCAPE)
 		{
-			director.sendEvent(AppActorEvents.EVENT_TRANSITION_TO_MENU_SCENE, this);
+			director.sendEvent(AppEvents.EVENT_TRANSITION_TO_MENU_SCENE, this);
 
 			handled = true;
 		}

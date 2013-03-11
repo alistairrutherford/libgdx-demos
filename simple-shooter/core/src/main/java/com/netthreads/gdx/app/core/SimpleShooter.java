@@ -24,7 +24,7 @@ import aurelienribon.tweenengine.equations.Linear;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.InputAdapter;
-import com.netthreads.gdx.app.definition.AppActorEvents;
+import com.netthreads.gdx.app.definition.AppEvents;
 import com.netthreads.gdx.app.definition.AppSoundDefinitions;
 import com.netthreads.gdx.app.definition.AppTextureDefinitions;
 import com.netthreads.gdx.app.scene.AboutScene;
@@ -171,23 +171,23 @@ public class SimpleShooter extends InputAdapter implements ApplicationListener, 
 		
 		switch (event.getId())
 		{
-			case AppActorEvents.EVENT_DISPLAY_SPLASH_SCREEN:
+			case AppEvents.EVENT_DISPLAY_SPLASH_SCREEN:
 				displaySplashScene();
 				handled = true;
 				break;
-			case AppActorEvents.EVENT_TRANSITION_TO_MENU_SCENE:
+			case AppEvents.EVENT_TRANSITION_TO_MENU_SCENE:
 				transitionToMenuScene();
 				handled = true;
 				break;
-			case AppActorEvents.EVENT_TRANSITION_TO_SETTINGS_SCENE:
+			case AppEvents.EVENT_TRANSITION_TO_SETTINGS_SCENE:
 				transitionToSettingsScene();
 				handled = true;
 				break;
-			case AppActorEvents.EVENT_TRANSITION_TO_GAME_SCENE:
+			case AppEvents.EVENT_TRANSITION_TO_GAME_SCENE:
 				transitionToGameScene();
 				handled = true;
 				break;
-			case AppActorEvents.EVENT_TRANSITION_TO_ABOUT_SCENE:
+			case AppEvents.EVENT_TRANSITION_TO_ABOUT_SCENE:
 				transitionToAboutScene();
 				handled = true;
 				break;

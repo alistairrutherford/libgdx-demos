@@ -19,7 +19,7 @@
 
 package com.netthreads.gdx.app.definition;
 
-public class AppActorEvents
+public class AppEvents
 {
 	private static final int EVENT_BASE = 0;
 	

@@ -21,7 +21,7 @@ package com.netthreads.gdx.app.layer;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.netthreads.gdx.app.definition.AppActorEvents;
+import com.netthreads.gdx.app.definition.AppEvents;
 import com.netthreads.gdx.app.definition.AppSoundDefinitions;
 import com.netthreads.gdx.app.definition.AppTextureDefinitions;
 import com.netthreads.gdx.app.properties.GameProperties;
@@ -152,7 +152,7 @@ public class ShipLayer extends Layer implements ActorEventObserver, ActionCallBa
 	public void onCallBack()
 	{
 		// Launch an asteroid.
-		this.director.sendEvent(AppActorEvents.EVENT_START_PULSE, spriteShip);
+		this.director.sendEvent(AppEvents.EVENT_START_PULSE, spriteShip);
 
 		// Play zap.
 		if (gameProperties.isAudioOn())
@@ -194,7 +194,7 @@ public class ShipLayer extends Layer implements ActorEventObserver, ActionCallBa
 
 		switch (event.getId())
 		{
-		case AppActorEvents.EVENT_COLLISION_ASTEROID_SHIP:
+		case AppEvents.EVENT_COLLISION_ASTEROID_SHIP:
 			handleCollision(event.getActor());
 			handled = true;
 			break;

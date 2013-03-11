@@ -33,7 +33,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.netthreads.gdx.app.definition.AppActorEvents;
+import com.netthreads.gdx.app.definition.AppEvents;
 import com.netthreads.gdx.app.definition.AppTextureDefinitions;
 import com.netthreads.gdx.app.properties.GameProperties;
 import com.netthreads.libgdx.director.AppInjector;
@@ -204,7 +204,7 @@ public class SettingsLayer extends Layer
 
 		if (keycode == Keys.BACK || keycode == Keys.ESCAPE)
 		{
-			director.sendEvent(AppActorEvents.EVENT_TRANSITION_TO_MENU_SCENE, this);
+			director.sendEvent(AppEvents.EVENT_TRANSITION_TO_MENU_SCENE, this);
 
 			handled = true;
 		}

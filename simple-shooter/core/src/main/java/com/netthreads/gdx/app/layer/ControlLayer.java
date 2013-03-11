@@ -21,7 +21,7 @@ package com.netthreads.gdx.app.layer;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
-import com.netthreads.gdx.app.definition.AppActorEvents;
+import com.netthreads.gdx.app.definition.AppEvents;
 import com.netthreads.libgdx.director.AppInjector;
 import com.netthreads.libgdx.director.Director;
 import com.netthreads.libgdx.scene.Layer;
@@ -61,7 +61,7 @@ public class ControlLayer extends Layer
 
 		if (keycode == Keys.BACK || keycode == Keys.ESCAPE)
 		{
-			director.sendEvent(AppActorEvents.EVENT_TRANSITION_TO_MENU_SCENE, this);
+			director.sendEvent(AppEvents.EVENT_TRANSITION_TO_MENU_SCENE, this);
 
 			handled = true;
 		}

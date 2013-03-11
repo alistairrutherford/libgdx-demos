@@ -38,7 +38,7 @@ public class MenuScene extends Scene
 		// ---------------------------------------------------------------
 		// Stars layer.
 		// ---------------------------------------------------------------
-		starsLayer = new StarsLayer(this.getWidth(), this.getHeight());
+		starsLayer = new StarsLayer(getWidth(), getHeight());
 
 		addLayer(starsLayer);
 		

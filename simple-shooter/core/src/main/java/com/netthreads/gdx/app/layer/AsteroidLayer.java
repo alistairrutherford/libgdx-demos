@@ -24,7 +24,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Pool;
 import com.badlogic.gdx.utils.SnapshotArray;
 import com.netthreads.gdx.app.core.AppStats;
-import com.netthreads.gdx.app.definition.AppActorEvents;
+import com.netthreads.gdx.app.definition.AppEvents;
 import com.netthreads.gdx.app.definition.AppTextureDefinitions;
 import com.netthreads.gdx.app.sprite.AsteroidSprite;
 import com.netthreads.libgdx.action.ActionCallBack;
@@ -152,7 +152,7 @@ public class AsteroidLayer extends Layer implements ActorEventObserver, ActionCa
 	public void onCallBack()
 	{
 		// Launch an asteroid.
-		this.director.sendEvent(AppActorEvents.EVENT_START_ASTEROID, this);
+		this.director.sendEvent(AppEvents.EVENT_START_ASTEROID, this);
 	}
 
 	/**
@@ -166,15 +166,15 @@ public class AsteroidLayer extends Layer implements ActorEventObserver, ActionCa
 
 		switch (event.getId())
 		{
-		case AppActorEvents.EVENT_START_ASTEROID:
+		case AppEvents.EVENT_START_ASTEROID:
 			handleStartAsteroid();
 			handled = true;
 			break;
-		case AppActorEvents.EVENT_COLLISION_ASTEROID_PULSE:
+		case AppEvents.EVENT_COLLISION_ASTEROID_PULSE:
 			handlePulseCollision(event.getActor());
 			handled = true;
 			break;
-		case AppActorEvents.EVENT_END_ASTEROID:
+		case AppEvents.EVENT_END_ASTEROID:
 			handleEndAsteroid(event.getActor());
 			handled = true;
 			break;
@@ -209,7 +209,7 @@ public class AsteroidLayer extends Layer implements ActorEventObserver, ActionCa
 	private void handlePulseCollision(Actor actor)
 	{
 		// Run explosion sprite
-		this.director.sendEvent(AppActorEvents.EVENT_START_ASTEROID_EXPLOSION, actor);
+		this.director.sendEvent(AppEvents.EVENT_START_ASTEROID_EXPLOSION, actor);
 
 		handleEndAsteroid(actor);
 

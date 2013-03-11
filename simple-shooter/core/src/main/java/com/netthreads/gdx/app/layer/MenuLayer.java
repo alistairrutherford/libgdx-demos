@@ -28,7 +28,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.netthreads.gdx.app.definition.AppActorEvents;
+import com.netthreads.gdx.app.definition.AppEvents;
 import com.netthreads.libgdx.director.AppInjector;
 import com.netthreads.libgdx.director.Director;
 import com.netthreads.libgdx.scene.Layer;
@@ -129,7 +129,7 @@ public class MenuLayer extends Layer
 			@Override
 			public void clicked(InputEvent event, float x, float y)
 			{
-				director.sendEvent(AppActorEvents.EVENT_TRANSITION_TO_GAME_SCENE, event.getRelatedActor());
+				director.sendEvent(AppEvents.EVENT_TRANSITION_TO_GAME_SCENE, event.getRelatedActor());
 			}
 
 		});
@@ -140,7 +140,7 @@ public class MenuLayer extends Layer
 			@Override
 			public void clicked(InputEvent event, float x, float y)
 			{
-				director.sendEvent(AppActorEvents.EVENT_TRANSITION_TO_SETTINGS_SCENE, event.getRelatedActor());
+				director.sendEvent(AppEvents.EVENT_TRANSITION_TO_SETTINGS_SCENE, event.getRelatedActor());
 			}
 
 		});
@@ -151,7 +151,7 @@ public class MenuLayer extends Layer
 			@Override
 			public void clicked(InputEvent event, float x, float y)
 			{
-				director.sendEvent(AppActorEvents.EVENT_TRANSITION_TO_ABOUT_SCENE, event.getRelatedActor());
+				director.sendEvent(AppEvents.EVENT_TRANSITION_TO_ABOUT_SCENE, event.getRelatedActor());
 			}
 
 		});

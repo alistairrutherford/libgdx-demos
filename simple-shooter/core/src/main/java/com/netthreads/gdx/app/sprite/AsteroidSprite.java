@@ -28,7 +28,7 @@ import aurelienribon.tweenengine.equations.Linear;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.netthreads.gdx.app.definition.AppActorEvents;
+import com.netthreads.gdx.app.definition.AppEvents;
 import com.netthreads.gdx.app.definition.AppStates;
 import com.netthreads.libgdx.action.ActionCallBack;
 import com.netthreads.libgdx.action.CallBackDelayAction;
@@ -166,7 +166,7 @@ public class AsteroidSprite extends AnimatedSprite implements TweenCallback, Act
 	private void handleComplete()
 	{
 		// Send notification that pulse has completed.
-		this.director.sendEvent(AppActorEvents.EVENT_END_ASTEROID, this);
+		this.director.sendEvent(AppEvents.EVENT_END_ASTEROID, this);
 	}
 
 	/**
@@ -186,16 +186,16 @@ public class AsteroidSprite extends AnimatedSprite implements TweenCallback, Act
 				if (!AppStates.shipSpriteBusy)
 				{
 					// Ship collision.
-					this.director.sendEvent(AppActorEvents.EVENT_COLLISION_ASTEROID_SHIP, this);
+					this.director.sendEvent(AppEvents.EVENT_COLLISION_ASTEROID_SHIP, this);
 				}
 			}
 			else if (target instanceof PulseSprite)
 			{
 				// Asteroid explode.
-				this.director.sendEvent(AppActorEvents.EVENT_COLLISION_ASTEROID_PULSE, this);
+				this.director.sendEvent(AppEvents.EVENT_COLLISION_ASTEROID_PULSE, this);
 
 				// Pulse finished.
-				this.director.sendEvent(AppActorEvents.EVENT_END_PULSE, target);
+				this.director.sendEvent(AppEvents.EVENT_END_PULSE, target);
 			}
 		}
 	}

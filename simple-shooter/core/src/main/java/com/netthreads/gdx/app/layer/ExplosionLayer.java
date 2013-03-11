@@ -22,7 +22,7 @@ package com.netthreads.gdx.app.layer;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Pool;
-import com.netthreads.gdx.app.definition.AppActorEvents;
+import com.netthreads.gdx.app.definition.AppEvents;
 import com.netthreads.gdx.app.definition.AppTextureDefinitions;
 import com.netthreads.gdx.app.sprite.ExplosionSprite;
 import com.netthreads.libgdx.director.AppInjector;
@@ -133,11 +133,11 @@ public class ExplosionLayer extends Layer implements ActorEventObserver
 
 		switch (event.getId())
 		{
-		case AppActorEvents.EVENT_START_ASTEROID_EXPLOSION:
+		case AppEvents.EVENT_START_ASTEROID_EXPLOSION:
 			handleStart(event.getActor());
 			handled = true;
 			break;
-		case AppActorEvents.EVENT_END_EXPLOSION:
+		case AppEvents.EVENT_END_EXPLOSION:
 			handleEnd(event.getActor());
 			handled = true;
 			break;
