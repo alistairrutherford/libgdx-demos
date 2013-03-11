@@ -55,11 +55,6 @@
 	</build>
 
 	<dependencies>
-		<dependency>
-			<groupId>com.netthreads.gdx</groupId>
-			<artifactId>box2d-test-core</artifactId>
-			<version>${project.version}</version>
-		</dependency>
 
 		<dependency>
 			<groupId>com.badlogic.gdx</groupId>
@@ -72,5 +67,12 @@
 			<artifactId>gdx-backend-lwjgl</artifactId>
 			<version>${gdx.version}</version>
 		</dependency>
+
+        <dependency>
+            <groupId>com.netthreads.gdx</groupId>
+            <artifactId>box2d-test-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>		
+				
 	</dependencies>
 </project>

@@ -19,8 +19,9 @@
 
 package com.netthreads.gdx.app.layer;
 
-import java.util.List;
 import java.util.Random;
+
+import aurelienribon.box2deditor.FixtureAtlas;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
