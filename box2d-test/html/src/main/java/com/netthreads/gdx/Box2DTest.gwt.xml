@@ -1,0 +1,12 @@
+<module rename-to='box2d-test'>
+  <inherits name='com.badlogic.gdx.backends.gdx_backends_gwt' />
+
+  <source path='core'/>
+  <source path='html'/>
+
+  <public path="resources" />
+
+  <entry-point class='com.netthreads.gdx.html.Box2DTestHtml'/>
+  <set-configuration-property name="gdx.assetpath" value="${asset.input.dir},desktop/assets,../desktop/assets,../../../../desktop/assets/" />
+  <set-configuration-property name="gdx.assetoutputpath" value="${asset.output.dir},box2d-test-1.0.1-SNAPSHOT,src/main/webapp,./" />
+</module>

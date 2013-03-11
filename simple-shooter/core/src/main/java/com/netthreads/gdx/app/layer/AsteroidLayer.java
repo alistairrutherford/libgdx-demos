@@ -130,6 +130,8 @@ public class AsteroidLayer extends Layer implements ActorEventObserver, ActionCa
 		for (Actor actor : list)
 		{
 			this.removeActor(actor);
+			
+			actor.clearActions();
 		}
 	}
 

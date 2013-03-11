@@ -20,36 +20,33 @@
 package com.netthreads.gdx.app.layer;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.netthreads.gdx.app.core.SimpleShooter;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.netthreads.gdx.app.definition.AppEvents;
-import com.netthreads.gdx.app.definition.AppTextureDefinitions;
 import com.netthreads.libgdx.director.AppInjector;
 import com.netthreads.libgdx.director.Director;
 import com.netthreads.libgdx.scene.Layer;
-import com.netthreads.libgdx.texture.TextureCache;
-import com.netthreads.libgdx.texture.TextureDefinition;
 
 /**
- * Scene layer.
+ * Menu layer.
  * 
  */
-public class AboutLayer extends Layer
+public class MenuLayer extends Layer
 {
-	private static final String UI_FILE = "data/uiskin32.json";
+	private static final String UI_FILE = "data/uiskin.json";
 	private static final String URL_LABEL_FONT = "default-font";
 
 	private Table table;
-	private TextureRegion logo;
 	private Skin skin;
-	private Label urlLabel;
-	private Label versionLabel;
+	private Label titleLabel;
+	private Button startButton;
+	private Button aboutButton;
 
 	/**
 	 * The one and only director.
@@ -57,30 +54,22 @@ public class AboutLayer extends Layer
 	private Director director;
 
 	/**
-	 * Singletons.
-	 */
-	private TextureCache textureCache;
-
-	/**
-	 * About layer.
+	 * Construct the screen.
 	 * 
 	 * @param stage
 	 */
-	public AboutLayer(float width, float height)
+	public MenuLayer(float width, float height)
 	{
 		setWidth(width);
 		setHeight(height);
 
 		director = AppInjector.getInjector().getInstance(Director.class);
 
-		textureCache = AppInjector.getInjector().getInstance(TextureCache.class);
-
 		Gdx.input.setCatchBackKey(true);
 
 		loadTextures();
 
 		buildElements();
-
 	}
 
 	/**
@@ -90,9 +79,6 @@ public class AboutLayer extends Layer
 	private void loadTextures()
 	{
 		skin = new Skin(Gdx.files.internal(UI_FILE));
-
-		TextureDefinition definition = textureCache.getDefinition(AppTextureDefinitions.TEXTURE_LIBGDX_LOGO);
-		logo = textureCache.getTexture(definition);
 	}
 
 	/**
@@ -101,59 +87,59 @@ public class AboutLayer extends Layer
 	 */
 	private void buildElements()
 	{
-		// ---------------------------------------------------------------
-		// Background.
-		// ---------------------------------------------------------------
-		Image image = new Image(logo);
-
-		image.setWidth(getWidth());
-		image.setHeight(getHeight());
+		// Title
+		titleLabel = new Label("Box2D Demo", skin, URL_LABEL_FONT, Color.YELLOW);
 
 		// ---------------------------------------------------------------
-		// Labels
+		// Buttons.
 		// ---------------------------------------------------------------
-		urlLabel = new Label("www.netthreads.co.uk", skin, URL_LABEL_FONT, Color.WHITE);
-
-		versionLabel = new Label(SimpleShooter.VERSION_TEXT, skin, URL_LABEL_FONT, Color.WHITE);
+		startButton = new TextButton("Start", skin);
+		aboutButton = new TextButton("About", skin);
 
 		// ---------------------------------------------------------------
 		// Table
 		// ---------------------------------------------------------------
 		table = new Table();
 
-		table.size((int) getWidth(), (int) getHeight());
+		table.size(getWidth(), getHeight());
 
 		table.row();
-		table.add(urlLabel).expandY().expandX();
+		table.add(titleLabel).expandY().expandX();
 		table.row();
-		table.add(image);
+		table.add(startButton).expandY().expandX();
 		table.row();
-		table.add(versionLabel).expandY().expandX();
-
-		table.pack();
+		table.row();
+		table.add(aboutButton).expandY().expandX();
 
 		table.setFillParent(true);
 
-		addActor(table);
-	}
-
-	/**
-	 * Catch escape key.
-	 * 
-	 */
-	@Override
-	public boolean keyUp(int keycode)
-	{
-		boolean handled = false;
-
-		if (keycode == Keys.BACK || keycode == Keys.ESCAPE)
+		table.pack();
+		
+		// Listener.
+		startButton.addListener(new ClickListener()
 		{
-			director.sendEvent(AppEvents.EVENT_TRANSITION_TO_MENU_SCENE, this);
+			@Override
+			public void clicked(InputEvent event, float x, float y)
+			{
+				director.sendEvent(AppEvents.EVENT_TRANSITION_TO_SIMULATION_SCENE, event.getRelatedActor());
+			}
 
-			handled = true;
-		}
+		});
 
-		return handled;
+		// Listener.
+		aboutButton.addListener(new ClickListener()
+		{
+			@Override
+			public void clicked(InputEvent event, float x, float y)
+			{
+				director.sendEvent(AppEvents.EVENT_TRANSITION_TO_ABOUT_SCENE, event.getRelatedActor());
+			}
+
+		});
+
+		// Add table to view
+		addActor(table);
+
 	}
 
 }

@@ -121,6 +121,8 @@ public class PulseLayer extends Layer implements ActorEventObserver
 		for (Actor actor : list)
 		{
 			this.removeActor(actor);
+			
+			actor.clearActions();
 		}
 	}
 
