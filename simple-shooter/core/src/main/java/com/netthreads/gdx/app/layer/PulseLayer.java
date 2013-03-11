@@ -192,8 +192,9 @@ public class PulseLayer extends Layer implements ActorEventObserver
 	 */
 	public void handleEndPulse(Actor source)
 	{
-		// This will trigger a "removeActor" call.
-		this.removeActor(source);
+		source.clearActions();
+		
+		removeActor(source);
 	}
 
 }
