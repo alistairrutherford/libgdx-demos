@@ -183,12 +183,14 @@ public class SimulationLayer extends Layer implements ActorEventObserver
 		{
 			if (all)
 			{
+				/** TODO CAN WE DO THIS?? **/
 				removeActor(actor);
 			}
 			else
 			{
 				if (actor instanceof BallSprite)
 				{
+					/** TODO CAN WE DO THIS?? **/
 					removeActor(actor);
 				}
 			}

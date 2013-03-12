@@ -31,7 +31,7 @@ import com.netthreads.libgdx.scene.Layer;
  * Fading label layer.
  * 
  */
-public class LabelLayer extends Layer
+public class FadeLabelLayer extends Layer
 {
 	private static final int INITIAL_POOL_CAPACITY = 20;
 	
@@ -65,23 +65,23 @@ public class LabelLayer extends Layer
 	 * @param width
 	 * @param height
 	 */
-	public LabelLayer(float width, float height)
+	public FadeLabelLayer(float width, float height)
 	{
 		setWidth(width);
 		setHeight(height);
 		
 		director = AppInjector.getInjector().getInstance(Director.class);
 	}
-
+	
 	@Override
 	public boolean touchDown(int x, int y, int pointer, int button)
 	{
 		float touchX = (x * director.getScaleFactorX());
 		float touchY = director.getHeight() - (y * director.getScaleFactorY());
-
+		
 		// Get free sprite from pool.
 		FadeLabelSprite sprite = pool.obtain();
-
+		
 		// Make text.
 		textStringBuilder.setLength(0);
 		textStringBuilder.append(Math.round(x));
@@ -111,18 +111,18 @@ public class LabelLayer extends Layer
 	 * When the label 'fade' action has run it's course the completion handler
 	 * will mark it for removal. This method will then catch the removal and
 	 * also free it from the associated pool to be used again.
-	 * @return 
+	 * 
+	 * @return
 	 * 
 	 */
 	@Override
 	public boolean removeActor(Actor actor)
 	{
 		super.removeActor(actor);
-
-		actor.clearActions();
-
+		
 		FadeLabelSprite sprite = (FadeLabelSprite) actor;
-
+		sprite.clearActions();
+		
 		pool.free(sprite);
 		
 		return true;

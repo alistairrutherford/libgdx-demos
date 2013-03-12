@@ -20,6 +20,7 @@
 package com.netthreads.gdx.java;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
+import com.netthreads.gdx.app.Box2DTest;
 
 
 public class Box2DTestDesktop

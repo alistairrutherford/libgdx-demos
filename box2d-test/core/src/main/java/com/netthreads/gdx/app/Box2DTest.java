@@ -182,7 +182,7 @@ public class Box2DTest extends InputAdapter implements ApplicationListener, Acto
 			handled = true;
 			break;
 		case AppEvents.EVENT_TRANSITION_TO_SIMULATION_SCENE:
-			transitionToGameScene();
+			transitionToSimulationScene();
 			handled = true;
 			break;
 		case AppEvents.EVENT_TRANSITION_TO_ABOUT_SCENE:
@@ -222,7 +222,7 @@ public class Box2DTest extends InputAdapter implements ApplicationListener, Acto
 	 * Run transition.
 	 * 
 	 */
-	private void transitionToGameScene()
+	private void transitionToSimulationScene()
 	{
 		Scene inScene = getAppScene();
 		Scene outScene = this.director.getScene();

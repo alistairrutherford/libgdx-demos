@@ -21,7 +21,7 @@ package com.netthreads.gdx.app.scene;
 
 import com.netthreads.gdx.app.layer.ControlLayer;
 import com.netthreads.gdx.app.layer.FpsLayer;
-import com.netthreads.gdx.app.layer.LabelLayer;
+import com.netthreads.gdx.app.layer.FadeLabelLayer;
 import com.netthreads.gdx.app.layer.SimulationLayer;
 import com.netthreads.libgdx.scene.Layer;
 import com.netthreads.libgdx.scene.Scene;
@@ -62,7 +62,7 @@ public class AppScene extends Scene
 		// ---------------------------------------------------------------
 		// Label layer.
 		// ---------------------------------------------------------------
-		labelLayer = new LabelLayer(getWidth(), getHeight());
+		labelLayer = new FadeLabelLayer(getWidth(), getHeight());
 		
 		// Route input events to layer.
 		getInputMultiplexer().addProcessor(labelLayer);
