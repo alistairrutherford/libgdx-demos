@@ -109,10 +109,12 @@ public class FadeLabelLayer extends Layer
 	
 	/**
 	 * When the label 'fade' action has run it's course the completion handler
-	 * will mark it for removal. This method will then catch the removal and
-	 * also free it from the associated pool to be used again.
+	 * will call removeActor on the parent layer.
 	 * 
-	 * @return
+	 * NOTE: We cannot call clearActions at this point as this is technically
+	 * getting called from within an action.
+	 * 
+	 * @return success.
 	 * 
 	 */
 	@Override
@@ -121,7 +123,6 @@ public class FadeLabelLayer extends Layer
 		super.removeActor(actor);
 		
 		FadeLabelSprite sprite = (FadeLabelSprite) actor;
-		sprite.clearActions();
 		
 		pool.free(sprite);
 		
