@@ -25,8 +25,8 @@ import aurelienribon.tweenengine.equations.Linear;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.InputAdapter;
 import com.netthreads.gdx.app.definition.AppEvents;
-import com.netthreads.gdx.app.definition.AppActorSounds;
-import com.netthreads.gdx.app.definition.AppActorTextures;
+import com.netthreads.gdx.app.definition.AppSoundDefinitions;
+import com.netthreads.gdx.app.definition.AppTextureDefinitions;
 import com.netthreads.gdx.app.scene.AboutScene;
 import com.netthreads.gdx.app.scene.AppScene;
 import com.netthreads.gdx.app.scene.MenuScene;
@@ -49,6 +49,8 @@ import com.netthreads.libgdx.texture.TextureCache;
  */
 public class Box2DTest extends InputAdapter implements ApplicationListener, ActorEventObserver
 {
+	public static final String VERSION_TEXT = "1.0.1";
+	
 	private static final float DEFAULT_CLEAR_COLOUR_RED = 0.5f;
 	private static final float DEFAULT_CLEAR_COLOUR_BLUE = 0.5f;
 	private static final float DEFAULT_CLEAR_COLOUR_GREEN = 0.5f;
@@ -103,10 +105,10 @@ public class Box2DTest extends InputAdapter implements ApplicationListener, Acto
 		this.director.registerEventHandler(this);
 
 		// Load/Re-load textures
-		textureCache.load(AppActorTextures.TEXTURES);
+		textureCache.load(AppTextureDefinitions.TEXTURES);
 
 		// Load/Re-load sounds.
-		soundCache.load(AppActorSounds.SOUNDS);
+		soundCache.load(AppSoundDefinitions.SOUNDS);
 
 		this.director.setScene(getMenuScene());
 	}

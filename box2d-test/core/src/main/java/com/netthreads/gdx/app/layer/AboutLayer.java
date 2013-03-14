@@ -27,7 +27,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.netthreads.gdx.app.definition.AppActorTextures;
+import com.netthreads.gdx.app.Box2DTest;
+import com.netthreads.gdx.app.definition.AppTextureDefinitions;
 import com.netthreads.gdx.app.definition.AppEvents;
 import com.netthreads.libgdx.director.AppInjector;
 import com.netthreads.libgdx.director.Director;
@@ -43,13 +44,13 @@ public class AboutLayer extends Layer
 {
 	private static final String UI_FILE = "data/uiskin32.json";
 	private static final String URL_LABEL_FONT = "default-font";
-	
+
 	private Table table;
 	private TextureRegion logo;
 	private Skin skin;
 	private Label urlLabel;
-	private Label poweredByLabel;
-	
+	private Label versionLabel;
+
 	/**
 	 * The one and only director.
 	 */
@@ -59,7 +60,12 @@ public class AboutLayer extends Layer
 	 * Singletons.
 	 */
 	private TextureCache textureCache;
-	
+
+	/**
+	 * About layer.
+	 * 
+	 * @param stage
+	 */
 	public AboutLayer(float width, float height)
 	{
 		setWidth(width);
@@ -68,15 +74,15 @@ public class AboutLayer extends Layer
 		director = AppInjector.getInjector().getInstance(Director.class);
 
 		textureCache = AppInjector.getInjector().getInstance(TextureCache.class);
-		
+
 		Gdx.input.setCatchBackKey(true);
-		
+
 		loadTextures();
-		
+
 		buildElements();
-		
+
 	}
-	
+
 	/**
 	 * Load view textures.
 	 * 
@@ -84,17 +90,18 @@ public class AboutLayer extends Layer
 	private void loadTextures()
 	{
 		skin = new Skin(Gdx.files.internal(UI_FILE));
-		
-		TextureDefinition definition = textureCache.getDefinition(AppActorTextures.TEXTURE_LIBGDX_LOGO);
+
+		TextureDefinition definition = textureCache.getDefinition(AppTextureDefinitions.TEXTURE_LIBGDX_LOGO);
 		logo = textureCache.getTexture(definition);
 	}
-	
+
 	/**
 	 * Build view elements.
 	 * 
 	 */
 	private void buildElements()
 	{
+		// ---------------------------------------------------------------
 		// Background.
 		// ---------------------------------------------------------------
 		Image image = new Image(logo);
@@ -106,29 +113,30 @@ public class AboutLayer extends Layer
 		// Labels
 		// ---------------------------------------------------------------
 		urlLabel = new Label("www.netthreads.co.uk", skin, URL_LABEL_FONT, Color.WHITE);
-		poweredByLabel = new Label("Powered By", skin);
-		
+
+		versionLabel = new Label(Box2DTest.VERSION_TEXT, skin, URL_LABEL_FONT, Color.WHITE);
+
 		// ---------------------------------------------------------------
 		// Table
 		// ---------------------------------------------------------------
 		table = new Table();
-		
-		table.size(getWidth(), getHeight());
-		
+
+		table.size((int) getWidth(), (int) getHeight());
+
 		table.row();
 		table.add(urlLabel).expandY().expandX();
 		table.row();
 		table.add(image);
 		table.row();
-		table.add(poweredByLabel).expandY().expandX();
-		table.row();
-		table.add(image).expandY().expandX();
-		
+		table.add(versionLabel).expandY().expandX();
+
 		table.pack();
-		
+
+		table.setFillParent(true);
+
 		addActor(table);
 	}
-	
+
 	/**
 	 * Catch escape key.
 	 * 
@@ -137,15 +145,15 @@ public class AboutLayer extends Layer
 	public boolean keyUp(int keycode)
 	{
 		boolean handled = false;
-		
+
 		if (keycode == Keys.BACK || keycode == Keys.ESCAPE)
 		{
 			director.sendEvent(AppEvents.EVENT_TRANSITION_TO_MENU_SCENE, this);
-			
+
 			handled = true;
 		}
-		
+
 		return handled;
 	}
-	
+
 }

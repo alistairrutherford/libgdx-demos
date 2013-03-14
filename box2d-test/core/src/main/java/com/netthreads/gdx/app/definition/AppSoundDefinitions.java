@@ -22,28 +22,24 @@ package com.netthreads.gdx.app.definition;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.netthreads.libgdx.texture.TextureDefinition;
+import com.netthreads.libgdx.sound.SoundDefinition;
 
 /**
- * You can populate this if you are not using a pre-defined packed texture
- * created using the TexturePacker class.
+ * Populate this with sound definitions.
  * 
+ * NOTE: This is incredibly inefficient way of handling this. Currently we have
+ * to do a lookup every time we play a sound.
  */
 @SuppressWarnings("serial")
-public class AppActorTextures
+public class AppSoundDefinitions
 {
-	public static final String TEXTURE_PATH = "data/gfx";
+	public static final String SOUND_PATH = "data";
 	
-	public static final String TEXTURE_BALL = "ball.png";
-	public static final String TEXTURE_COG = "cogA.png";
-	public static final String TEXTURE_LIBGDX_LOGO = "libgdx.png";
 	
-	public static final List<TextureDefinition> TEXTURES = new LinkedList<TextureDefinition>()
+	public static final List<SoundDefinition> SOUNDS = new LinkedList<SoundDefinition>()
 	{
 		{
-			add(new TextureDefinition(TEXTURE_BALL, TEXTURE_PATH + "/" + TEXTURE_BALL));
-			add(new TextureDefinition(TEXTURE_COG, TEXTURE_PATH + "/" + TEXTURE_COG));
-			add(new TextureDefinition(TEXTURE_LIBGDX_LOGO, TEXTURE_PATH + "/" + TEXTURE_LIBGDX_LOGO));
+			// None
 		}
 	};
 	

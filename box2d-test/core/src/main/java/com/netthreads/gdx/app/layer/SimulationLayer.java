@@ -40,7 +40,7 @@ import com.badlogic.gdx.physics.box2d.joints.RevoluteJointDef;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Pool;
 import com.badlogic.gdx.utils.SnapshotArray;
-import com.netthreads.gdx.app.definition.AppActorTextures;
+import com.netthreads.gdx.app.definition.AppTextureDefinitions;
 import com.netthreads.gdx.app.definition.AppEvents;
 import com.netthreads.gdx.app.sprite.BallSprite;
 import com.netthreads.libgdx.action.BodyUpdateAction;
@@ -94,7 +94,7 @@ public class SimulationLayer extends Layer implements ActorEventObserver
 		@Override
 		protected BallSprite newObject()
 		{
-			TextureDefinition definition = textureCache.getDefinition(AppActorTextures.TEXTURE_BALL);
+			TextureDefinition definition = textureCache.getDefinition(AppTextureDefinitions.TEXTURE_BALL);
 			TextureRegion textureRegion = textureCache.getTexture(definition);
 			
 			BallSprite sprite = new BallSprite(textureRegion);
@@ -306,7 +306,7 @@ public class SimulationLayer extends Layer implements ActorEventObserver
 	 */
 	private void createCentralSprite()
 	{
-		TextureDefinition definition = textureCache.getDefinition(AppActorTextures.TEXTURE_COG);
+		TextureDefinition definition = textureCache.getDefinition(AppTextureDefinitions.TEXTURE_COG);
 		TextureRegion textureRegion = textureCache.getTexture(definition);
 		textureRegion.getTexture().setFilter(TextureFilter.Linear, TextureFilter.Linear);
 		
