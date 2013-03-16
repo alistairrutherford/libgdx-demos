@@ -19,7 +19,7 @@ Menu ![Menu](https://github.com/alistairrutherford/images/raw/master/simple-shoo
 
 box2d-test
 
-Menu ![Menu](https://github.com/alistairrutherford/images/raw/master/box2d1.png) 
+![Menu](https://github.com/alistairrutherford/images/raw/master/box2d1.png) 
 
 License
 -------
