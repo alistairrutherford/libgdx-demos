@@ -14,8 +14,13 @@ simple-shooter
 --------------
 
 A simple shoot-em-up
+Menu
 
-Menu ![Menu](https://github.com/alistairrutherford/images/raw/master/simple-shooter1.png) Game Screen ![Game Screen](https://github.com/alistairrutherford/images/raw/master/simple-shooter2.png)
+![Menu](https://github.com/alistairrutherford/images/raw/master/simple-shooter1.png) 
+
+Game Screen
+
+![Game Screen](https://github.com/alistairrutherford/images/raw/master/simple-shooter2.png)
 
 box2d-test
 
