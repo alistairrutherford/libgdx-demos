@@ -91,6 +91,10 @@ public class MenuLayer extends Layer
 		table.row();
 		table.add(aboutButton).expandY().expandX();
 
+		table.setFillParent(true);
+
+		table.pack();
+		
 		// Listener.
 		// Listener.
 		startButton.addListener(new ClickListener()
