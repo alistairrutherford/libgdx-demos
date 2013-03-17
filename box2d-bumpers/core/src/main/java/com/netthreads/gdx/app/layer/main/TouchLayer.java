@@ -171,7 +171,7 @@ public class TouchLayer extends Layer implements ManagedLayer
 		// Convert touch coordinates to world coordinates. Note, in Box2D the y
 		// axis is around the other way.
 		hitInfo.worldXY.x = x / pixelsPerMetre;
-		hitInfo.worldXY.y = (this.getHeight() - y) / pixelsPerMetre;
+		hitInfo.worldXY.y = (getHeight() - y) / pixelsPerMetre;
 
 		// Ask the world which bodies are within the given bounding box around
 		// the mouse pointer.
@@ -197,7 +197,7 @@ public class TouchLayer extends Layer implements ManagedLayer
 		if (mouseJoint != null)
 		{
 			hitInfo.worldXY.x = x / pixelsPerMetre;
-			hitInfo.worldXY.y = (this.getHeight() - y) / pixelsPerMetre;
+			hitInfo.worldXY.y = (getHeight() - y) / pixelsPerMetre;
 			mouseJoint.setTarget(hitInfo.worldXY);
 
 			if (isSendTouchDragged())

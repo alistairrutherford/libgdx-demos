@@ -40,12 +40,12 @@ public class LabeledSprite extends SimpleSprite
 	 */
 	public void setText(CharSequence text)
 	{
-		if (this.labelSprite != null)
+		if (labelSprite != null)
 		{
-			this.labelSprite.setText(text);
+			labelSprite.setText(text);
 
-			this.labelSprite.setOriginX(getOriginX() - labelSprite.getWidth() / 2);
-			this.labelSprite.setOriginY(getOriginY() + labelSprite.getHeight() / 2);
+			labelSprite.setOriginX(getOriginX() - labelSprite.getWidth() / 2);
+			labelSprite.setOriginY(getOriginY() + labelSprite.getHeight() / 2);
 		}
 	}
 
@@ -56,13 +56,13 @@ public class LabeledSprite extends SimpleSprite
 	 */
 	public void setText(Character character)
 	{
-		if (this.labelSprite != null)
+		if (labelSprite != null)
 		{
-			this.labelSprite.getText().setLength(0);
-			this.labelSprite.getText().append(character);
+			labelSprite.getText().setLength(0);
+			labelSprite.getText().append(character);
 
-			this.labelSprite.setOriginX(getOriginX() - labelSprite.getWidth() / 2);
-			this.labelSprite.setOriginY(getOriginY() + labelSprite.getHeight() / 2);
+			labelSprite.setOriginX(getOriginX() - labelSprite.getWidth() / 2);
+			labelSprite.setOriginY(getOriginY() + labelSprite.getHeight() / 2);
 		}
 	}
 

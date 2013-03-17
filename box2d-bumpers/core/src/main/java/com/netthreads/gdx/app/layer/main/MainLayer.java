@@ -88,7 +88,6 @@ public class MainLayer extends Layer implements ManagedLayer, ActorEventObserver
 		// ---------------------------------------------------------------
 		World world = worldLayer.getWorld();
 		float pixelsPerMetre = worldLayer.getPixelsPerMetre();
-		WorldElementContactListener contactListener = worldLayer.getContactListener();
 
 		touchLayer = new TouchLayer(getWidth(), getHeight(), world, pixelsPerMetre);
 
@@ -102,6 +101,7 @@ public class MainLayer extends Layer implements ManagedLayer, ActorEventObserver
 		// ---------------------------------------------------------------
 		// Create Box2D element layer
 		// ---------------------------------------------------------------
+		WorldElementContactListener contactListener = worldLayer.getContactListener();
 		elementLayer = new ElementLayer(getWidth(), getHeight(), world, pixelsPerMetre, contactListener);
 
 		addActor(elementLayer);
@@ -132,6 +132,9 @@ public class MainLayer extends Layer implements ManagedLayer, ActorEventObserver
 				managedLayer.cleanupView(all);
 			}
 		}
+
+		// We have to do this here after the layers have been cleaned up.
+		worldLayer.getWorld().dispose();
 	}
 
 	/**

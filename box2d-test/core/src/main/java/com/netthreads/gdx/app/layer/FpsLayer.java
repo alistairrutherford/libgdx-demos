@@ -50,8 +50,8 @@ public class FpsLayer extends Layer
 	 */
 	public FpsLayer(float width, float height)
 	{
-		this.setWidth(width);
-		this.setHeight(height);
+		setWidth(width);
+		setHeight(height);
 
 		buildElements();
 	}

@@ -62,7 +62,7 @@ public class WorldLayer extends Layer implements ManagedLayer
 	@Override
 	public void enter()
 	{
-		this.running = true;
+		running = true;
 	}
 
 	/**
@@ -72,7 +72,7 @@ public class WorldLayer extends Layer implements ManagedLayer
 	@Override
 	public void exit()
 	{
-		this.running = false;
+		running = false;
 	}
 
 	/**
@@ -82,9 +82,9 @@ public class WorldLayer extends Layer implements ManagedLayer
 	public void createView()
 	{
 		// create the world
-		this.world = new World(new Vector2(GRAVITY_X, GRAVITY_Y), true);
+		world = new World(new Vector2(GRAVITY_X, GRAVITY_Y), true);
 
-		this.contactListener = new WorldElementContactListener();
+		contactListener = new WorldElementContactListener();
 
 		createWallModels();
 	}
@@ -93,14 +93,11 @@ public class WorldLayer extends Layer implements ManagedLayer
 	 * Cleanup view elements. This gets called when the layer exits to remove non-static elements and it also gets
 	 * called when the application exits to clean up the Box2D world associated with the layer.
 	 * 
-	 * Note, setting markToRemove will eventually trigger the removeActor call for this layer which will in turn call
-	 * 'finish' on the associated update action which will remove the associated Actor box2D body from the world.
-	 * 
 	 */
 	@Override
 	public void cleanupView(boolean all)
 	{
-		world.dispose();
+		// NOTE WE DO THE MAIN DISPOSE 
 	}
 
 	/**
@@ -112,7 +109,7 @@ public class WorldLayer extends Layer implements ManagedLayer
 	{
 		super.draw(batch, parentAlpha);
 
-		if (this.running)
+		if (running)
 		{
 			world.step(Gdx.app.getGraphics().getDeltaTime(), 3, 3);
 		}

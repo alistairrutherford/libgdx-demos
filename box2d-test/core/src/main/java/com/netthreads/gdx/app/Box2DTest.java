@@ -98,11 +98,11 @@ public class Box2DTest extends InputAdapter implements ApplicationListener, Acto
 		director.setClearColourB(DEFAULT_CLEAR_COLOUR_BLUE);
 
 		// Set initial width and height.
-		this.director.setWidth(DEFAULT_WIDTH);
-		this.director.setHeight(DEFAULT_HEIGHT);
+		director.setWidth(DEFAULT_WIDTH);
+		director.setHeight(DEFAULT_HEIGHT);
 
 		// Add this as an event observer.
-		this.director.registerEventHandler(this);
+		director.registerEventHandler(this);
 
 		// Load/Re-load textures
 		textureCache.load(AppTextureDefinitions.TEXTURES);
@@ -110,7 +110,7 @@ public class Box2DTest extends InputAdapter implements ApplicationListener, Acto
 		// Load/Re-load sounds.
 		soundCache.load(AppSoundDefinitions.SOUNDS);
 
-		this.director.setScene(getMenuScene());
+		director.setScene(getMenuScene());
 	}
 
 	/**
@@ -205,7 +205,7 @@ public class Box2DTest extends InputAdapter implements ApplicationListener, Acto
 	private void transitionToMenuScene()
 	{
 		Scene inScene = getMenuScene();
-		Scene outScene = this.director.getScene();
+		Scene outScene = director.getScene();
 
 		TransitionScene transitionScene = null;
 		if (outScene instanceof AppScene)
@@ -217,7 +217,7 @@ public class Box2DTest extends InputAdapter implements ApplicationListener, Acto
 			transitionScene = MoveInLTransitionScene.$(inScene, outScene, DURATION_ABOUT_TRANSITION, Bounce.OUT);
 		}
 
-		this.director.setScene(transitionScene);
+		director.setScene(transitionScene);
 	}
 
 	/**
@@ -227,11 +227,11 @@ public class Box2DTest extends InputAdapter implements ApplicationListener, Acto
 	private void transitionToSimulationScene()
 	{
 		Scene inScene = getAppScene();
-		Scene outScene = this.director.getScene();
+		Scene outScene = director.getScene();
 
 		TransitionScene transitionScene = MoveInBTransitionScene.$(inScene, outScene, DURATION_MENU_TRANSITION, Linear.INOUT);
 
-		this.director.setScene(transitionScene);
+		director.setScene(transitionScene);
 	}
 
 	/**
@@ -241,11 +241,11 @@ public class Box2DTest extends InputAdapter implements ApplicationListener, Acto
 	private void transitionToAboutScene()
 	{
 		Scene inScene = getAboutScene();
-		Scene outScene = this.director.getScene();
+		Scene outScene = director.getScene();
 
 		TransitionScene transitionScene = MoveInRTransitionScene.$(inScene, outScene, DURATION_ABOUT_TRANSITION, Bounce.OUT);
 
-		this.director.setScene(transitionScene);
+		director.setScene(transitionScene);
 	}
 
 	/**

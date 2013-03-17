@@ -66,11 +66,11 @@ public class Box2DBumpers extends InputAdapter implements ApplicationListener, A
 		director = AppInjector.getInjector().getInstance(Director.class);
 
 		// Set initial width and height.
-		this.director.setWidth(DEFAULT_WIDTH);
-		this.director.setHeight(DEFAULT_HEIGHT);
+		director.setWidth(DEFAULT_WIDTH);
+		director.setHeight(DEFAULT_HEIGHT);
 
 		// Add this as an event observer.
-		this.director.registerEventHandler(this);
+		director.registerEventHandler(this);
 
 		// ---------------------------------------------------------------
 		// Textures
@@ -89,12 +89,12 @@ public class Box2DBumpers extends InputAdapter implements ApplicationListener, A
 		soundCache.load(AppSounds.SOUNDS);
 
 		// Set up director screen clear colour.
-		this.director.setClearColourR(0.4f);
-		this.director.setClearColourG(0.4f);
-		this.director.setClearColourB(0.4f);
+		director.setClearColourR(0.4f);
+		director.setClearColourG(0.4f);
+		director.setClearColourB(0.4f);
 
 		// Set initial scene.
-		this.director.setScene(getMenuScene());
+		director.setScene(getMenuScene());
 	}
 
 	/**
@@ -236,11 +236,11 @@ public class Box2DBumpers extends InputAdapter implements ApplicationListener, A
 	private void handleTransitionToMenuScene()
 	{
 		Scene inScene = getMenuScene();
-		Scene outScene = this.director.getScene();
+		Scene outScene = director.getScene();
 
 		TransitionScene transitionScene = MoveInTTransitionScene.$(inScene, outScene, DURATION_TRANSITION_TO_MENU, Linear.INOUT);
 
-		this.director.setScene(transitionScene);
+		director.setScene(transitionScene);
 	}
 
 	/**
@@ -250,11 +250,11 @@ public class Box2DBumpers extends InputAdapter implements ApplicationListener, A
 	private void handleTransitionToMainScene()
 	{
 		Scene inScene = getMainScene();
-		Scene outScene = this.director.getScene();
+		Scene outScene = director.getScene();
 
 		TransitionScene transitionScene = MoveInBTransitionScene.$(inScene, outScene, DURATION_TRANSITION_TO_MAIN, Linear.INOUT);
 
-		this.director.setScene(transitionScene);
+		director.setScene(transitionScene);
 	}
 
 	/**
@@ -264,11 +264,11 @@ public class Box2DBumpers extends InputAdapter implements ApplicationListener, A
 	private void handleTransitionToAboutScene()
 	{
 		Scene inScene = getAboutScene();
-		Scene outScene = this.director.getScene();
+		Scene outScene = director.getScene();
 
 		TransitionScene transitionScene = MoveInBTransitionScene.$(inScene, outScene, DURATION_TRANSITION_TO_ABOUT, Linear.INOUT);
 
-		this.director.setScene(transitionScene);
+		director.setScene(transitionScene);
 	}
 
 }

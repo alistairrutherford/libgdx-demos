@@ -17,7 +17,7 @@ public class WorldElement
 	 */
 	public WorldElement()
 	{
-		this.body = null;
+		body = null;
 	}
 	
 	/**

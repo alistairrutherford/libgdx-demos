@@ -133,7 +133,7 @@ public class SimulationLayer extends Layer implements ActorEventObserver
 		// Add this as an event observer.
 		director.registerEventHandler(this);
 
-		this.running = true;
+		running = true;
 	}
 
 	/**
@@ -143,7 +143,7 @@ public class SimulationLayer extends Layer implements ActorEventObserver
 	@Override
 	public void exit()
 	{
-		this.running = false;
+		running = false;
 
 		cleanupView(false);
 
@@ -205,7 +205,7 @@ public class SimulationLayer extends Layer implements ActorEventObserver
 	{
 		super.draw(batch, parentAlpha);
 
-		if (this.running)
+		if (running)
 		{
 			world.step(Gdx.app.getGraphics().getDeltaTime(), 3, 3);
 		}

@@ -115,9 +115,6 @@ public class ElementLayer extends Layer implements ManagedLayer, ActorEventObser
 		// Add this as an event observer.
 		director.registerEventHandler(this);
 
-		// Clear any outstanding actions.
-		clearActions();
-
 		// Add some elements
 		for (int i = 0; i < ELEMENT_COUNT; i++)
 		{
@@ -140,8 +137,7 @@ public class ElementLayer extends Layer implements ManagedLayer, ActorEventObser
 	}
 
 	/**
-	 * Cleanup view elements. This gets called when the layer exits to remove non-static elements and it also gets
-	 * called when the application exits to clean up the Box2D world associated with the layer.
+	 * Cleanup view elements. 
 	 * 
 	 */
 	@Override
@@ -154,7 +150,6 @@ public class ElementLayer extends Layer implements ManagedLayer, ActorEventObser
 			removeActor(actor);
 		}
 
-		world.dispose();
 	}
 
 	/**
@@ -168,7 +163,8 @@ public class ElementLayer extends Layer implements ManagedLayer, ActorEventObser
 	{
 		super.removeActor(actor);
 
-		// Balloons
+		actor.clearActions();
+		
 		if (actor instanceof LabeledSprite)
 		{
 			// Free from pool.
@@ -180,9 +176,6 @@ public class ElementLayer extends Layer implements ManagedLayer, ActorEventObser
 			contactListener.removeElement(element);
 			worldElementPool.free(element);
 		}
-
-		// Clear associated actions
-		actor.clearActions();
 
 		return true;
 	}

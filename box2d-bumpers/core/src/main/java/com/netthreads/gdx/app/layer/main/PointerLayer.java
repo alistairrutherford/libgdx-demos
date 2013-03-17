@@ -135,8 +135,9 @@ public class PointerLayer extends Layer implements ActorEventObserver
 	{
 		super.removeActor(actor);
 
+		actor.clearActions();
+
 		FlareSprite sprite = (FlareSprite) actor;
-		sprite.clearActions();
 
 		pool.free(sprite);
 
