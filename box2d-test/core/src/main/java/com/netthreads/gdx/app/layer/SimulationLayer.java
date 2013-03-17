@@ -168,8 +168,7 @@ public class SimulationLayer extends Layer implements ActorEventObserver
 	}
 
 	/**
-	 * Cleanup view elements. This gets called when the layer exits to remove non-static elements and it also gets
-	 * called when the application exits to clean up the Box2D world associated with the layer.
+	 * Cleanup view elements. If we are only exiting the view then just the balls.
 	 * 
 	 */
 	public void cleanupView(boolean all)
@@ -226,12 +225,11 @@ public class SimulationLayer extends Layer implements ActorEventObserver
 		super.removeActor(actor);
 
 		// This will call 'finish' on Actor associated actions.
-		SimpleSprite sprite = (SimpleSprite) actor;
-		sprite.clearActions();
+		actor.clearActions();
 
 		if (actor instanceof BallSprite)
 		{
-			BallSprite ballSprite = (BallSprite) sprite;
+			BallSprite ballSprite = (BallSprite) actor;
 			pool.free(ballSprite);
 		}
 
