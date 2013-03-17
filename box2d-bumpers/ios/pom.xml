@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.netthreads.gdx</groupId>
+    <artifactId>box2d-bumpers</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>box2d-bumpers-ios</artifactId>
+  <packaging>dll</packaging>
+  <name>Box2DBumpers iOS</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.netthreads.gdx</groupId>
+      <artifactId>box2d-bumpers-core</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.googlecode.playn</groupId>
+      <artifactId>playn-ios</artifactId>
+      <version>${playn.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <!-- use bin as that's where MonoDevelop puts its build bits -->
+    <directory>bin</directory>
+    <!-- omit the version from the dll name so it doesn't change with releases -->
+    <finalName>${project.artifactId}</finalName>
+    <plugins>
+      <plugin>
+        <groupId>com.samskivert</groupId>
+        <artifactId>ikvm-maven-plugin</artifactId>
+        <version>1.1.2</version>
+        <!-- this lets Maven know that we define 'packaging: dll' -->
+        <extensions>true</extensions>
+        <configuration>
+          <ikvmArgs>
+            <ikvmArg>-debug</ikvmArg>
+          </ikvmArgs>
+          <createStub>true</createStub>
+          <dlls>
+            <dll>OpenTK.dll</dll>
+            <dll>monotouch.dll</dll>
+            <dll>System.Data.dll</dll>
+            <dll>Mono.Data.Sqlite.dll</dll>
+          </dlls>
+          <copyDlls>
+            <copyDll>bin/IKVM.Runtime.dll</copyDll>
+            <copyDll>bin/IKVM.Runtime.JNI.dll</copyDll>
+            <copyDll>bin/IKVM.OpenJDK.Core.dll</copyDll>
+            <copyDll>bin/IKVM.OpenJDK.Util.dll</copyDll>
+            <copyDll>bin/IKVM.OpenJDK.Text.dll</copyDll>
+          </copyDlls>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
