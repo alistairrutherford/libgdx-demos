@@ -74,7 +74,7 @@ public class AsteroidLayer extends Layer implements ActorEventObserver, ActionCa
 	 */
 	private TextureCache textureCache;
 	private AppStats appStats;
-	
+
 	/**
 	 * Create asteroid layer.
 	 * 
@@ -128,14 +128,14 @@ public class AsteroidLayer extends Layer implements ActorEventObserver, ActionCa
 		while (size > 0)
 		{
 			Actor actor = getChildren().get(--size);
-			
+
 			removeActor(actor);
-			
+
 			actor.clearActions();
 
-			pool.free((AsteroidSprite)actor);
+			pool.free((AsteroidSprite) actor);
 		}
-		
+
 	}
 
 	/**
@@ -231,8 +231,10 @@ public class AsteroidLayer extends Layer implements ActorEventObserver, ActionCa
 	private void handleEndAsteroid(Actor source)
 	{
 		source.clearActions();
-		
+
 		removeActor(source);
+
+		pool.free((AsteroidSprite) source);
 	}
 
 }
