@@ -91,7 +91,6 @@
             <groupId>com.netthreads.gdx</groupId>
             <artifactId>box2d-test-core</artifactId>
             <version>${project.version}</version>
-            <classifier>sources</classifier>
         </dependency>		
 				
 	</dependencies>
