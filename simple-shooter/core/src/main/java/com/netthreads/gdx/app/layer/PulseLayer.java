@@ -69,7 +69,7 @@ public class PulseLayer extends Layer implements ActorEventObserver
 	 * Singletons.
 	 */
 	private TextureCache textureCache;
-	
+
 	/**
 	 * Create pulse group layer.
 	 * 
@@ -79,7 +79,7 @@ public class PulseLayer extends Layer implements ActorEventObserver
 	{
 		setWidth(width);
 		setHeight(height);
-		
+
 		director = AppInjector.getInjector().getInstance(Director.class);
 
 		textureCache = AppInjector.getInjector().getInstance(TextureCache.class);
@@ -119,10 +119,8 @@ public class PulseLayer extends Layer implements ActorEventObserver
 		while (size > 0)
 		{
 			Actor actor = getChildren().get(--size);
-			
+
 			removeActor(actor);
-			
-			actor.clearActions();
 		}
 	}
 
@@ -170,6 +168,7 @@ public class PulseLayer extends Layer implements ActorEventObserver
 		float x = source.getX() + source.getWidth() / 2 - sprite.getWidth() / 2;
 		float y = source.getY() + source.getHeight() / 2;
 
+		// if valid then add it else re-pool.
 		if ((x > 0 && y > 0) && (x < this.getWidth() && y < this.getHeight()))
 		{
 			// Add to view.
@@ -192,9 +191,23 @@ public class PulseLayer extends Layer implements ActorEventObserver
 	 */
 	public void handleEndPulse(Actor source)
 	{
-		source.clearActions();
-		
 		removeActor(source);
+	}
+
+	/**
+	 * We override the removeActor to ensure we clear actions and re-pool item.
+	 * 
+	 */
+	@Override
+	public boolean removeActor(Actor actor)
+	{
+		super.removeActor(actor);
+
+		actor.clearActions();
+
+		pool.free((PulseSprite) actor);
+
+		return true;
 	}
 
 }

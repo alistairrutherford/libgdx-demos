@@ -130,10 +130,6 @@ public class AsteroidLayer extends Layer implements ActorEventObserver, ActionCa
 			Actor actor = getChildren().get(--size);
 
 			removeActor(actor);
-
-			actor.clearActions();
-
-			pool.free((AsteroidSprite) actor);
 		}
 
 	}
@@ -230,11 +226,23 @@ public class AsteroidLayer extends Layer implements ActorEventObserver, ActionCa
 	 */
 	private void handleEndAsteroid(Actor source)
 	{
-		source.clearActions();
-
 		removeActor(source);
+	}
 
-		pool.free((AsteroidSprite) source);
+	/**
+	 * We override the removeActor to ensure we clear actions and re-pool item.
+	 * 
+	 */
+	@Override
+	public boolean removeActor(Actor actor)
+	{
+		super.removeActor(actor);
+
+		actor.clearActions();
+
+		pool.free((AsteroidSprite) actor);
+
+		return true;
 	}
 
 }

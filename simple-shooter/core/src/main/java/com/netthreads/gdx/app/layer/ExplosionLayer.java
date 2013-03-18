@@ -55,7 +55,6 @@ public class ExplosionLayer extends Layer implements ActorEventObserver
 		}
 	};
 
-
 	/**
 	 * The one and only director.
 	 */
@@ -65,7 +64,7 @@ public class ExplosionLayer extends Layer implements ActorEventObserver
 	 * Singletons.
 	 */
 	private TextureCache textureCache;
-	
+
 	/**
 	 * Create pulse group layer.
 	 * 
@@ -75,7 +74,7 @@ public class ExplosionLayer extends Layer implements ActorEventObserver
 	{
 		setWidth(width);
 		setHeight(height);
-		
+
 		director = AppInjector.getInjector().getInstance(Director.class);
 
 		textureCache = AppInjector.getInjector().getInstance(TextureCache.class);
@@ -100,11 +99,11 @@ public class ExplosionLayer extends Layer implements ActorEventObserver
 	public void exit()
 	{
 		cleanup();
-		
+
 		// Remove this as an event observer.
 		director.deregisterEventHandler(this);
 	}
-	
+
 	/**
 	 * Pooled layers need cleanup view elements.
 	 * 
@@ -115,13 +114,11 @@ public class ExplosionLayer extends Layer implements ActorEventObserver
 		while (size > 0)
 		{
 			Actor actor = getChildren().get(--size);
-			
+
 			removeActor(actor);
-			
-			actor.clearActions();
 		}
 	}
-	
+
 	/**
 	 * Create new sprite.
 	 * 
@@ -138,11 +135,9 @@ public class ExplosionLayer extends Layer implements ActorEventObserver
 	}
 
 	/**
-	 * Event handler will listen for pulse fire event and kick off pulse when
-	 * one is received.
+	 * Event handler will listen for pulse fire event and kick off pulse when one is received.
 	 * 
-	 * Event handler will listen for signal that pulse is finished and remove it
-	 * from view.
+	 * Event handler will listen for signal that pulse is finished and remove it from view.
 	 * 
 	 */
 	@Override
@@ -184,10 +179,10 @@ public class ExplosionLayer extends Layer implements ActorEventObserver
 		ExplosionSprite sprite = pool.obtain();
 		sprite.setX(x);
 		sprite.setY(y);
-		
+
 		// Add to view.
 		addActor(sprite);
-		
+
 		// Ensure we play-back from the start.
 		sprite.resetAnimation();
 	}
@@ -200,11 +195,23 @@ public class ExplosionLayer extends Layer implements ActorEventObserver
 	 */
 	public void handleEnd(Actor source)
 	{
-		// Free this from pool so it can be re-used.
-		pool.free((ExplosionSprite) source);
+		removeActor(source);
+	}
 
-		// Remove from view.
-		source.remove();
+	/**
+	 * We override the removeActor to ensure we clear actions and re-pool item.
+	 * 
+	 */
+	@Override
+	public boolean removeActor(Actor actor)
+	{
+		super.removeActor(actor);
+
+		actor.clearActions();
+
+		pool.free((ExplosionSprite) actor);
+
+		return true;
 	}
 
 }
