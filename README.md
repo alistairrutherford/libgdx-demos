@@ -10,10 +10,15 @@ There are a few pre-requisites you will need to do before you can get these up a
 https://github.com/alistairrutherford/libgdx-demos/wiki/Build-Instructions
 
 
+Changelog here:
+
+https://github.com/alistairrutherford/libgdx-demos/wiki/Changelog
+
 simple-shooter
 --------------
 
 A simple shoot-em-up
+
 Menu
 
 ![Demo](https://github.com/alistairrutherford/images/raw/master/simple-shooter1.png) 
