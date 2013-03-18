@@ -129,7 +129,7 @@ public class ShipSprite extends AnimatedSprite implements ActionCallBack
 	{
 		nextPosition.set(targetPosition);
 		nextPosition.sub(position);
-		nextPosition.mul(getInterpolation().apply(Math.min(1, timer / 1f)));
+		nextPosition.scl(getInterpolation().apply(Math.min(1, timer / 1f)));
 		nextPosition.add(position);
 		return nextPosition;
 	}

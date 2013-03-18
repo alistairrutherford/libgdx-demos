@@ -39,9 +39,8 @@ import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.physics.box2d.joints.RevoluteJointDef;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Pool;
-import com.badlogic.gdx.utils.SnapshotArray;
-import com.netthreads.gdx.app.definition.AppTextureDefinitions;
 import com.netthreads.gdx.app.definition.AppEvents;
+import com.netthreads.gdx.app.definition.AppTextureDefinitions;
 import com.netthreads.gdx.app.sprite.BallSprite;
 import com.netthreads.libgdx.action.BodyUpdateAction;
 import com.netthreads.libgdx.director.AppInjector;
@@ -173,10 +172,11 @@ public class SimulationLayer extends Layer implements ActorEventObserver
 	 */
 	public void cleanupView(boolean all)
 	{
-		SnapshotArray<Actor> list = getChildren();
-
-		for (Actor actor : list)
+		int size = getChildren().size;
+		while (size > 0)
 		{
+			Actor actor = getChildren().get(--size);
+
 			if (all)
 			{
 				removeActor(actor);

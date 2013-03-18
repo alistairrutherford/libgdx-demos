@@ -118,6 +118,7 @@ public class FadeLabelSprite extends Actor implements ActionCallBack
 	/**
 	 * On callback remove the actor.
 	 * 
+	 * TODO: Find a better way to do this.
 	 */
 	@Override
 	public void onCallBack()

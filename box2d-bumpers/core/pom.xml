@@ -18,13 +18,6 @@
 			<artifactId>gdx</artifactId>
 			<version>${gdx.version}</version>
 		</dependency>
-		
-        <dependency>
-            <groupId>com.badlogic.gdx</groupId>
-            <artifactId>gdx</artifactId>
-            <version>${gdx.version}</version>
-            <classifier>sources</classifier>            
-        </dependency>
         
         <!-- General -->
 

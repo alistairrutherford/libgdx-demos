@@ -22,7 +22,6 @@ package com.netthreads.gdx.app.layer;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Pool;
-import com.badlogic.gdx.utils.SnapshotArray;
 import com.netthreads.gdx.app.core.AppStats;
 import com.netthreads.gdx.app.definition.AppEvents;
 import com.netthreads.gdx.app.definition.AppTextureDefinitions;
@@ -125,14 +124,18 @@ public class AsteroidLayer extends Layer implements ActorEventObserver, ActionCa
 	 */
 	private void cleanup()
 	{
-		SnapshotArray<Actor> list = this.getChildren();
-
-		for (Actor actor : list)
+		int size = getChildren().size;
+		while (size > 0)
 		{
+			Actor actor = getChildren().get(--size);
+			
 			removeActor(actor);
 			
 			actor.clearActions();
+
+			pool.free((AsteroidSprite)actor);
 		}
+		
 	}
 
 	/**

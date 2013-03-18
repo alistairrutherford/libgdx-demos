@@ -56,6 +56,6 @@ public class MainScene extends Scene
 	 */
 	public void cleanup()
 	{
-		mainLayer.cleanupView(true);
+		mainLayer.cleanupView();
 	}
 }

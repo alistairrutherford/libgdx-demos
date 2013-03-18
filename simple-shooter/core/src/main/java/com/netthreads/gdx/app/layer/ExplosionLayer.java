@@ -99,8 +99,27 @@ public class ExplosionLayer extends Layer implements ActorEventObserver
 	@Override
 	public void exit()
 	{
+		cleanup();
+		
 		// Remove this as an event observer.
 		director.deregisterEventHandler(this);
+	}
+	
+	/**
+	 * Pooled layers need cleanup view elements.
+	 * 
+	 */
+	private void cleanup()
+	{
+		int size = getChildren().size;
+		while (size > 0)
+		{
+			Actor actor = getChildren().get(--size);
+			
+			removeActor(actor);
+			
+			actor.clearActions();
+		}
 	}
 	
 	/**

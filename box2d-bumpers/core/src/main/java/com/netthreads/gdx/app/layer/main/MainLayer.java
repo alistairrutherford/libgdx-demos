@@ -2,7 +2,6 @@ package com.netthreads.gdx.app.layer.main;
 
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.utils.SnapshotArray;
 import com.netthreads.gdx.app.definition.AppEvents;
 import com.netthreads.gdx.app.layer.ManagedLayer;
 import com.netthreads.gdx.app.layer.element.WorldElementContactListener;
@@ -120,16 +119,16 @@ public class MainLayer extends Layer implements ManagedLayer, ActorEventObserver
 	 * @param all
 	 */
 	@Override
-	public void cleanupView(boolean all)
+	public void cleanupView()
 	{
-		SnapshotArray<Actor> list = getChildren();
-
-		for (Actor actor : list)
+		int size = getChildren().size;
+		while (size > 0)
 		{
+			Actor actor = getChildren().get(--size);
 			if (actor instanceof ManagedLayer)
 			{
 				ManagedLayer managedLayer = (ManagedLayer) actor;
-				managedLayer.cleanupView(all);
+				managedLayer.cleanupView();
 			}
 		}
 

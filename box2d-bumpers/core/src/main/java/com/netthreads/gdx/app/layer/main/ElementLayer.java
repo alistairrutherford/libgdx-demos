@@ -11,7 +11,6 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Pool;
-import com.badlogic.gdx.utils.SnapshotArray;
 import com.netthreads.gdx.app.definition.AppEvents;
 import com.netthreads.gdx.app.definition.AppSize;
 import com.netthreads.gdx.app.definition.AppTextures;
@@ -133,23 +132,22 @@ public class ElementLayer extends Layer implements ManagedLayer, ActorEventObser
 		// Remove this as an event observer.
 		director.deregisterEventHandler(this);
 
-		cleanupView(false);
+		cleanupView();
 	}
 
 	/**
-	 * Cleanup view elements. 
+	 * Cleanup view elements.
 	 * 
 	 */
 	@Override
-	public void cleanupView(boolean all)
+	public void cleanupView()
 	{
-		SnapshotArray<Actor> list = getChildren();
-
-		for (Actor actor : list)
+		int size = getChildren().size;
+		while (size > 0)
 		{
+			Actor actor = getChildren().get(--size);
 			removeActor(actor);
 		}
-
 	}
 
 	/**
@@ -164,7 +162,7 @@ public class ElementLayer extends Layer implements ManagedLayer, ActorEventObser
 		super.removeActor(actor);
 
 		actor.clearActions();
-		
+
 		if (actor instanceof LabeledSprite)
 		{
 			// Free from pool.

@@ -95,7 +95,7 @@ public class WorldLayer extends Layer implements ManagedLayer
 	 * 
 	 */
 	@Override
-	public void cleanupView(boolean all)
+	public void cleanupView()
 	{
 		// NOTE WE DO THE MAIN DISPOSE 
 	}

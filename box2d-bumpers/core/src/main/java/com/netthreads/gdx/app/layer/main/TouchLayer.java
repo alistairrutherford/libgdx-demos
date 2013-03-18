@@ -102,7 +102,7 @@ public class TouchLayer extends Layer implements ManagedLayer
 	}
 
 	@Override
-	public void cleanupView(boolean all)
+	public void cleanupView()
 	{
 		hitInfo.reset();
 		mouseJoint = null;
