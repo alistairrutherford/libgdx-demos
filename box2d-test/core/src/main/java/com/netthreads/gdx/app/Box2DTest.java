@@ -61,8 +61,8 @@ public class Box2DTest extends InputAdapter implements ApplicationListener, Acto
 	public static final int DEFAULT_WIDTH = 320;
 	public static final int DEFAULT_HEIGHT = 480;
 
-	private static final int DURATION_ABOUT_TRANSITION = 700;
-	private static final int DURATION_MENU_TRANSITION = 1000;
+	private static final int DURATION_ABOUT_TRANSITION = 500;
+	private static final int DURATION_MENU_TRANSITION = 500;
 
 	// Our 'stages' for groups of actors.
 	private MenuScene menuScene;

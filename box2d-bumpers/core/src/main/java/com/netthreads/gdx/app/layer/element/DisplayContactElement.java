@@ -67,7 +67,7 @@ public class DisplayContactElement extends WorldElement
 			Gdx.app.log("DisplayContactElement", "x:" + pointX + ", y:" + pointY);
 
 			// Dampen!
-			collisionBody.applyAngularImpulse(0);
+			collisionBody.applyAngularImpulse(0, true);
 
 			// Play clonk.
 			if (appProperties.isAudioOn())

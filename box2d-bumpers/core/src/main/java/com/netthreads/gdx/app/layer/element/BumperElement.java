@@ -89,7 +89,7 @@ public class BumperElement extends WorldElement
 		impulseForBody(collisionBody);
 
 		// Kick!
-		collisionBody.applyLinearImpulse(impulseX, impulseY, pointX, pointY);
+		collisionBody.applyLinearImpulse(impulseX, impulseY, pointX, pointY, true);
 
 		// Dampen!
 		// collisionBody.applyAngularImpulse(0);
