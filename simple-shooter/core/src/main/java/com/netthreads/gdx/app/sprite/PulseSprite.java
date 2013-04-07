@@ -80,8 +80,7 @@ public class PulseSprite extends FrameSprite implements TweenCallback
 	public void run(float x, float y)
 	{
 		// Set initial position
-		this.setX(x);
-		this.setY(y);
+		setPosition(x, y);
 
 		// Calculate the duration to cover distance at pixels-per-second.
 		float height = director.getHeight();

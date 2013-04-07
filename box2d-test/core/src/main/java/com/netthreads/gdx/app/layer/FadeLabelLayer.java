@@ -91,8 +91,7 @@ public class FadeLabelLayer extends Layer
 		
 		// Position.
 		sprite.setText(textStringBuilder);
-		sprite.setX(touchX);
-		sprite.setY(touchY);
+		sprite.setPosition(touchX, touchY);
 		
 		// Send an event to drop a ball at touch position
 		director.sendEvent(AppEvents.EVENT_DROP_SHAPE, sprite);

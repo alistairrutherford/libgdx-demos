@@ -204,8 +204,7 @@ public class ElementLayer extends Layer implements ManagedLayer, ActorEventObser
 		sprite.setText(text);
 
 		// Position
-		sprite.setX(xPos);
-		sprite.setY(yPos);
+		sprite.setPosition(xPos, yPos);
 
 		// -----------------------------------------------------------
 		// Body

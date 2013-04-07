@@ -96,8 +96,7 @@ public class AsteroidSprite extends AnimatedSprite implements TweenCallback, Act
 		float randomX = (float) (Math.random() * width);
 
 		// From the top and random point across the width.
-		this.setX(randomX);
-		this.setY(height);
+		this.setPosition(randomX, height);
 
 		// ---------------------------------------------------------------
 		// Animation.

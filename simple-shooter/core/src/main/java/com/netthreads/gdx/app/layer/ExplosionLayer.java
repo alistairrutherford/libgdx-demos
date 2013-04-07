@@ -177,8 +177,7 @@ public class ExplosionLayer extends Layer implements ActorEventObserver
 
 		// Get free sprite from pool.
 		ExplosionSprite sprite = pool.obtain();
-		sprite.setX(x);
-		sprite.setY(y);
+		sprite.setPosition(x, y);
 
 		// Add to view.
 		addActor(sprite);
