@@ -20,12 +20,26 @@
 	</properties>
 
 	<dependencies>
+	    
+        <dependency>
+            <groupId>com.netthreads.libgdx</groupId>
+            <artifactId>netthreads-libgdx</artifactId>
+            <version>1.0.4-SNAPSHOT</version>
+            <classifier>sources</classifier>
+        </dependency>
+
+        <dependency>
+            <groupId>aurelienribon.tweenengine</groupId>
+            <artifactId>tween-engine-api-sources</artifactId>
+            <version>6.3.3</version>
+        </dependency>
+        	    	    
 		<dependency>
 			<groupId>com.netthreads.gdx</groupId>
 			<artifactId>simple-shooter-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-
+				
 		<dependency>
 			<groupId>com.badlogic.gdx</groupId>
 			<artifactId>gdx-backend-gwt</artifactId>
