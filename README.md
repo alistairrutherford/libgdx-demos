@@ -1,7 +1,7 @@
 libgdx-demos
 ============
 
-LibGDX Demos using my netthreads-libgdx extension library. Fully mavenized.
+LibGDX Scene2D Demos using my netthreads-libgdx extension library. Fully mavenized.
 
 These demos illustrate my event driven approach to the design of LibGDX applications.
 
