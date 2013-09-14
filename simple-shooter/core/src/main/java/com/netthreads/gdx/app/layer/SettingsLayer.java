@@ -22,11 +22,9 @@ package com.netthreads.gdx.app.layer;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.CheckBox;
-import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Slider;
@@ -34,13 +32,10 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.netthreads.gdx.app.definition.AppEvents;
-import com.netthreads.gdx.app.definition.AppTextureDefinitions;
-import com.netthreads.gdx.app.properties.GameProperties;
+import com.netthreads.gdx.app.properties.ApplicationProperties;
 import com.netthreads.libgdx.director.AppInjector;
 import com.netthreads.libgdx.director.Director;
 import com.netthreads.libgdx.scene.Layer;
-import com.netthreads.libgdx.texture.TextureCache;
-import com.netthreads.libgdx.texture.TextureDefinition;
 
 /**
  * Scene layer.
@@ -48,11 +43,14 @@ import com.netthreads.libgdx.texture.TextureDefinition;
  */
 public class SettingsLayer extends Layer
 {
-	private static final String UI_FILE = "data/uiskin60.json";
-	private static final String URL_LABEL_FONT = "default-font";
+	private static final String UI_FILE = "data/uiskin.json";
+	private static final String URL_LABEL_FONT = "medium-font";
+
+	private static final String TEXT_SETTINGS = "Settings";
+	private static final String TEXT_SOUND = "SOUND";
+	private static final String TEXT_VOLUME = "Volume";
 
 	private Table table;
-	private TextureRegion background;
 	private Skin skin;
 
 	/**
@@ -63,8 +61,7 @@ public class SettingsLayer extends Layer
 	/**
 	 * Singletons
 	 */
-	private GameProperties gameProperties;
-	private TextureCache textureCache;
+	private ApplicationProperties applicationProperties;
 
 	/**
 	 * Construct layer.
@@ -79,10 +76,8 @@ public class SettingsLayer extends Layer
 
 		director = AppInjector.getInjector().getInstance(Director.class);
 
-		textureCache = AppInjector.getInjector().getInstance(TextureCache.class);
-		
-		gameProperties = AppInjector.getInjector().getInstance(GameProperties.class);
-		
+		applicationProperties = AppInjector.getInjector().getInstance(ApplicationProperties.class);
+
 		Gdx.input.setCatchBackKey(true);
 
 		loadTextures();
@@ -96,9 +91,6 @@ public class SettingsLayer extends Layer
 	 */
 	private void loadTextures()
 	{
-		TextureDefinition definition = textureCache.getDefinition(AppTextureDefinitions.TEXTURE_MENU_BACKGROUND);
-		background = textureCache.getTexture(definition);
-
 		skin = new Skin(Gdx.files.internal(UI_FILE));
 	}
 
@@ -109,30 +101,23 @@ public class SettingsLayer extends Layer
 	private void buildElements()
 	{
 		// ---------------------------------------------------------------
-		// Background.
-		// ---------------------------------------------------------------
-		Image image = new Image(background);
-
-		image.setWidth(getWidth());
-		image.setHeight(getHeight());
-
-		addActor(image);
-
-		// ---------------------------------------------------------------
 		// Elements
 		// ---------------------------------------------------------------
-		final Label titleLabel = new Label("Settings", skin, URL_LABEL_FONT, Color.YELLOW);
-		
+		final Label titleLabel = new Label(TEXT_SETTINGS, skin, URL_LABEL_FONT, Color.YELLOW);
+
 		final CheckBox checkBox = new CheckBox("", skin);
-		checkBox.setChecked(gameProperties.isAudioOn());
+		checkBox.setChecked(applicationProperties.isAudioOn());
 		checkBox.size(20, 20);
 
-		final Label soundLabel = new Label("Sound", skin);
+		final Label soundLabel = new Label(TEXT_SOUND, skin);
 
 		final Slider slider = new Slider(0, 10, 1, false, skin);
-		slider.setValue(gameProperties.getVolume());
-		final Label volumeLabel = new Label("Volume", skin);
-		
+		slider.setValue(applicationProperties.getVolume());
+		final Label volumeLabel = new Label(TEXT_VOLUME, skin);
+
+		final Label padding = new Label("", skin);
+		padding.setHeight(20);
+
 		// ---------------------------------------------------------------
 		// Table
 		// ---------------------------------------------------------------
@@ -151,6 +136,11 @@ public class SettingsLayer extends Layer
 		table.row();
 		table.add(slider);
 		table.row();
+		for (int i = 0; i < 20; i++)
+		{
+			table.add(padding);
+			table.row();
+		}
 
 		table.setFillParent(true);
 
@@ -167,7 +157,7 @@ public class SettingsLayer extends Layer
 			{
 				boolean setting = checkBox.isChecked();
 
-				gameProperties.setAudioOn(setting);
+				applicationProperties.setAudioOn(setting);
 			}
 
 		});
@@ -182,11 +172,11 @@ public class SettingsLayer extends Layer
 
 				if (slider.getValue() == 0)
 				{
-					gameProperties.setVolume(0);
+					applicationProperties.setVolume(0);
 				}
 				else
 				{
-					gameProperties.setVolume(slider.getValue() / 10);
+					applicationProperties.setVolume(slider.getValue() / 10);
 				}
 			}
 

@@ -39,9 +39,9 @@ import com.netthreads.libgdx.scene.Layer;
  */
 public class MenuLayer extends Layer
 {
-	private static final String UI_FILE = "data/uiskin60.json";
+	private static final String UI_FILE = "data/uiskin.json";
 	private static final String URL_LABEL_FONT = "large-font";
-	private static final String URL_LABEL_FONT_SMALL = "default-font";
+	private static final String URL_LABEL_FONT_SMALL = "medium-font";
 	
 	private Table table;
 	private Skin skin;

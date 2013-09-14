@@ -40,7 +40,6 @@ public class AppTextureDefinitions implements TextureDefinitions
 	public static final String TEXTURE_ASTEROID = "asteroid.png";
 	public static final String TEXTURE_EXPLOSION = "explosion.png";
 	public static final String TEXTURE_BACKGROUND = "background.png";
-	public static final String TEXTURE_MENU_BACKGROUND = "menubackground.png";
 	public static final String TEXTURE_PULSE = "pulse.png";
 	public static final String TEXTURE_SHIPS = "ships.png";
 	public static final String TEXTURE_SPLASH = "splash.png";
@@ -53,7 +52,6 @@ public class AppTextureDefinitions implements TextureDefinitions
 			add(new TextureDefinition(TEXTURE_ASTEROID, TEXTURE_PATH + "/" + TEXTURE_ASTEROID));
 			add(new TextureDefinition(TEXTURE_EXPLOSION, TEXTURE_PATH + "/" + TEXTURE_EXPLOSION, 1, 4));
 			add(new TextureDefinition(TEXTURE_BACKGROUND, TEXTURE_PATH + "/" + TEXTURE_BACKGROUND));
-			add(new TextureDefinition(TEXTURE_MENU_BACKGROUND, TEXTURE_PATH + "/" + TEXTURE_MENU_BACKGROUND));
 			add(new TextureDefinition(TEXTURE_PULSE, TEXTURE_PATH + "/" + TEXTURE_PULSE, 1, 8));
 			add(new TextureDefinition(TEXTURE_SHIPS, TEXTURE_PATH + "/" + TEXTURE_SHIPS, 1, 4));
 			add(new TextureDefinition(TEXTURE_SPLASH, TEXTURE_PATH + "/" + TEXTURE_SPLASH));

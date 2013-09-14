@@ -24,7 +24,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.netthreads.gdx.app.definition.AppEvents;
 import com.netthreads.gdx.app.definition.AppSoundDefinitions;
 import com.netthreads.gdx.app.definition.AppTextureDefinitions;
-import com.netthreads.gdx.app.properties.GameProperties;
+import com.netthreads.gdx.app.properties.ApplicationProperties;
 import com.netthreads.gdx.app.sprite.ShipSprite;
 import com.netthreads.libgdx.action.ActionCallBack;
 import com.netthreads.libgdx.action.CallBackDelayAction;
@@ -64,7 +64,7 @@ public class ShipLayer extends Layer implements ActorEventObserver, ActionCallBa
 
 	private SoundCache soundCache;
 	
-	private GameProperties gameProperties;
+	private ApplicationProperties gameProperties;
 	
 	/**
 	 * Create layer.
@@ -80,7 +80,7 @@ public class ShipLayer extends Layer implements ActorEventObserver, ActionCallBa
 
 		textureCache = AppInjector.getInjector().getInstance(TextureCache.class);
 		
-		gameProperties = AppInjector.getInjector().getInstance(GameProperties.class);
+		gameProperties = AppInjector.getInjector().getInstance(ApplicationProperties.class);
 		
 		soundCache = AppInjector.getInjector().getInstance(SoundCache.class);
 

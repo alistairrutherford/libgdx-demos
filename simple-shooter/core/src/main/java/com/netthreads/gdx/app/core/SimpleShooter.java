@@ -51,7 +51,7 @@ import com.netthreads.libgdx.texture.TextureCache;
  */
 public class SimpleShooter extends InputAdapter implements ApplicationListener, ActorEventObserver
 {
-	public static final String VERSION_TEXT = "1.0.7";
+	public static final String VERSION_TEXT = "1.0.8";
 	
 	public static final int DEFAULT_WIDTH = 320;
 	public static final int DEFAULT_HEIGHT = 480;

@@ -22,6 +22,7 @@ package com.netthreads.gdx.app.scene;
 import com.netthreads.gdx.app.layer.AsteroidLayer;
 import com.netthreads.gdx.app.layer.ControlLayer;
 import com.netthreads.gdx.app.layer.ExplosionLayer;
+import com.netthreads.gdx.app.layer.FpsLayer;
 import com.netthreads.gdx.app.layer.PulseLayer;
 import com.netthreads.gdx.app.layer.ShipLayer;
 import com.netthreads.gdx.app.layer.StarsLayer;
@@ -41,6 +42,7 @@ public class GameScene extends Scene
 	private Layer asteroidLayer;
 	private Layer explosionLayer;
 	private Layer statsLayer;
+	private Layer fpsLayer;
 
 	/**
 	 * Main game scene.
@@ -102,6 +104,13 @@ public class GameScene extends Scene
 		statsLayer = new StatsLayer(getWidth(), getHeight());
 
 		addLayer(statsLayer);
+		
+		// ---------------------------------------------------------------
+		// Fps layer
+		// ---------------------------------------------------------------
+		fpsLayer = new FpsLayer(getWidth(), getHeight());
+		
+		addLayer(fpsLayer);
 	}
 
 }

@@ -21,6 +21,7 @@ package com.netthreads.gdx.app.scene;
 
 import com.netthreads.gdx.app.layer.AboutLayer;
 import com.netthreads.gdx.app.layer.ControlLayer;
+import com.netthreads.gdx.app.layer.StarsLayer;
 import com.netthreads.libgdx.scene.Layer;
 import com.netthreads.libgdx.scene.Scene;
 
@@ -32,6 +33,7 @@ public class AboutScene extends Scene
 {
 	private Layer controlLayer;
 	private Layer aboutLayer;
+	private Layer starsLayer;
 
 	public AboutScene()
 	{
@@ -41,6 +43,13 @@ public class AboutScene extends Scene
 		controlLayer = new ControlLayer();
 		getInputMultiplexer().addProcessor(controlLayer);
 		addLayer(controlLayer);
+
+		// ---------------------------------------------------------------
+		// Stars layer
+		// ---------------------------------------------------------------
+		starsLayer = new StarsLayer(getWidth(), getHeight());
+
+		addLayer(starsLayer);
 		
 		// ---------------------------------------------------------------
 		// About layer

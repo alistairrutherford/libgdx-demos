@@ -34,7 +34,7 @@ import com.netthreads.libgdx.sound.SoundDefinitions;
 @SuppressWarnings("serial")
 public class AppSoundDefinitions implements SoundDefinitions 
 {
-	public static final String SOUND_PATH = "data";
+	public static final String SOUND_PATH = "sounds";
 	
 	public static final String SOUND_PULSE = "pulse.wav";
 	

@@ -32,8 +32,8 @@ import com.netthreads.libgdx.scene.Layer;
  */
 public class FpsLayer extends Layer
 {
-	private static final String FONT_FILE_SMALL = "data/font.fnt";
-	private static final String FONT_IMAGE_SMALL = "data/font.png";
+	private static final String FONT_FILE_SMALL = "data/digital-dreams-bold-16.fnt";
+	private static final String FONT_IMAGE_SMALL = "data/digital-dreams-bold-16.png";
 
 	private static final String TEXT_FPS = "fps:";
 
@@ -74,6 +74,6 @@ public class FpsLayer extends Layer
 		textStringBuilder.append(Gdx.graphics.getFramesPerSecond());
 		textStringBuilder.getChars(0, textStringBuilder.length(), chars, 0);
 
-		smallFont.draw(batch, textStringBuilder, 10, 15);
+		smallFont.draw(batch, textStringBuilder, 10, 20);
 	}
 }

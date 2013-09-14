@@ -35,15 +35,11 @@ import com.netthreads.libgdx.scene.Layer;
  */
 public class StatsLayer extends Layer
 {
-	private static final String FONT_FILE_SMALL = "data/font.fnt";
-	private static final String FONT_IMAGE_SMALL = "data/font.png";
-	private static final String FONT_FILE_LARGE = "data/digital-7_32.fnt";
-	private static final String FONT_IMAGE_LARGE = "data/digital-7_32.png";
+	private static final String FONT_FILE_LARGE = "data/digital-dreams-bold-32.fnt";
+	private static final String FONT_IMAGE_LARGE = "data/digital-dreams-bold-32.png";
 
-	private static final String TEXT_FPS = "fps:";
 	private static final String TEXT_SCORE = "Score:";
 
-	private BitmapFont smallFont;
 	private BitmapFont largeFont;
 
 	static final char chars[] = new char[100];
@@ -67,21 +63,12 @@ public class StatsLayer extends Layer
 	 */
 	private void buildElements()
 	{
-		smallFont = new BitmapFont(Gdx.files.internal(FONT_FILE_SMALL), Gdx.files.internal(FONT_IMAGE_SMALL), false);
 		largeFont = new BitmapFont(Gdx.files.internal(FONT_FILE_LARGE), Gdx.files.internal(FONT_IMAGE_LARGE), false);
 	}
 
 	@Override
 	public void draw(SpriteBatch batch, float parentAlpha)
 	{
-		// Frames Per Second.
-		textStringBuilder.setLength(0);
-		textStringBuilder.append(TEXT_FPS);
-		textStringBuilder.append(Gdx.graphics.getFramesPerSecond());
-		textStringBuilder.getChars(0, textStringBuilder.length(), chars, 0);
-
-		smallFont.draw(batch, textStringBuilder, 10, 15);
-
 		textStringBuilder.setLength(0);
 		textStringBuilder.append(TEXT_SCORE);
 		textStringBuilder.append(appStats.getScore());
