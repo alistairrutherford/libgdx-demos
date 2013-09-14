@@ -27,6 +27,10 @@ Game Screen
 
 ![Demo](https://github.com/alistairrutherford/images/raw/master/simple-shooter2.png)
 
+Settings Screen
+
+![Demo](https://github.com/alistairrutherford/images/raw/master/simple-shooter3.png)
+
 box2d-test
 
 ![Demo](https://github.com/alistairrutherford/images/raw/master/box2d1.png) 
