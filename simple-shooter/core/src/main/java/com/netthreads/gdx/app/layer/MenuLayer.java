@@ -40,8 +40,8 @@ import com.netthreads.libgdx.scene.Layer;
 public class MenuLayer extends Layer
 {
 	private static final String UI_FILE = "data/uiskin.json";
-	private static final String URL_LABEL_FONT = "large-font";
-	private static final String URL_LABEL_FONT_SMALL = "medium-font";
+	private static final String URL_LABEL_FONT = "large-font-bold";
+	private static final String URL_LABEL_FONT_MEDIUM = "medium-font-bold";
 	
 	private Table table;
 	private Skin skin;
@@ -92,7 +92,7 @@ public class MenuLayer extends Layer
 	{
 		// Title
 		titleLabelA = new Label("Simple", skin, URL_LABEL_FONT, Color.YELLOW);
-		titleLabelB = new Label("Shooter", skin, URL_LABEL_FONT_SMALL, Color.YELLOW);
+		titleLabelB = new Label("Shooter", skin, URL_LABEL_FONT_MEDIUM, Color.YELLOW);
 
 		// ---------------------------------------------------------------
 		// Buttons.

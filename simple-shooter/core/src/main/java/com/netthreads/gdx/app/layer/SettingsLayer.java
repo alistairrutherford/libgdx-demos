@@ -44,7 +44,8 @@ import com.netthreads.libgdx.scene.Layer;
 public class SettingsLayer extends Layer
 {
 	private static final String UI_FILE = "data/uiskin.json";
-	private static final String URL_LABEL_FONT = "medium-font";
+	private static final String URL_LABEL_FONT_NORMAL_BOLD = "medium-font-bold";
+	private static final String URL_LABEL_FONT_NORMAL = "medium-font";
 
 	private static final String TEXT_SETTINGS = "Settings";
 	private static final String TEXT_SOUND = "SOUND";
@@ -103,17 +104,17 @@ public class SettingsLayer extends Layer
 		// ---------------------------------------------------------------
 		// Elements
 		// ---------------------------------------------------------------
-		final Label titleLabel = new Label(TEXT_SETTINGS, skin, URL_LABEL_FONT, Color.YELLOW);
+		final Label titleLabel = new Label(TEXT_SETTINGS, skin, URL_LABEL_FONT_NORMAL_BOLD, Color.YELLOW);
 
 		final CheckBox checkBox = new CheckBox("", skin);
 		checkBox.setChecked(applicationProperties.isAudioOn());
 		checkBox.size(20, 20);
 
-		final Label soundLabel = new Label(TEXT_SOUND, skin);
+		final Label soundLabel = new Label(TEXT_SOUND, skin, URL_LABEL_FONT_NORMAL, Color.WHITE);
 
 		final Slider slider = new Slider(0, 10, 1, false, skin);
 		slider.setValue(applicationProperties.getVolume());
-		final Label volumeLabel = new Label(TEXT_VOLUME, skin);
+		final Label volumeLabel = new Label(TEXT_VOLUME, skin, URL_LABEL_FONT_NORMAL, Color.WHITE);
 
 		final Label padding = new Label("", skin);
 		padding.setHeight(20);
