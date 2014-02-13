@@ -19,6 +19,8 @@ simple-shooter
 
 A simple shoot-em-up
 
+**NOTE** Aplogogies I appear to have inadvertently deleted some of the asset files for this application. At the moment it is completely broken. Normal service will be resumed when I find my backups.
+
 Menu
 
 ![Demo](https://github.com/alistairrutherford/images/raw/master/simple-shooter1.png) 
