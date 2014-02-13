@@ -86,7 +86,7 @@
             <artifactId>tween-engine-api</artifactId>
             <version>6.3.3</version>
         </dependency>
-                				
+                	
         <dependency>
             <groupId>com.netthreads.gdx</groupId>
             <artifactId>simple-shooter-core</artifactId>

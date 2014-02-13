@@ -38,12 +38,12 @@ public class AppTextureDefinitions implements TextureDefinitions
 	public static final String TEXTURE_PATH = "data";
 	
 	public static final String TEXTURE_ASTEROID = "asteroid.png";
-	public static final String TEXTURE_EXPLOSION = "explosion.png";
 	public static final String TEXTURE_BACKGROUND = "background.png";
+	public static final String TEXTURE_EXPLOSION = "explosion.png";
+	public static final String TEXTURE_LIBGDX_LOGO = "libgdx.png";
 	public static final String TEXTURE_PULSE = "pulse.png";
 	public static final String TEXTURE_SHIPS = "ships.png";
 	public static final String TEXTURE_SPLASH = "splash.png";
-	public static final String TEXTURE_LIBGDX_LOGO = "libgdx.png";
 	
 
 	public static final List<TextureDefinition> TEXTURES = new LinkedList<TextureDefinition>()

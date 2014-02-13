@@ -35,8 +35,8 @@ import com.netthreads.libgdx.scene.Layer;
  */
 public class StatsLayer extends Layer
 {
-	private static final String FONT_FILE_LARGE = "data/digital-dreams-bold-32.fnt";
-	private static final String FONT_IMAGE_LARGE = "data/digital-dreams-bold-32.png";
+	private static final String FONT_FILE_LARGE = "data/digital-dream-32.fnt";
+	private static final String FONT_IMAGE_LARGE = "data/digital-dream-32.png";
 
 	private static final String TEXT_SCORE = "Score:";
 

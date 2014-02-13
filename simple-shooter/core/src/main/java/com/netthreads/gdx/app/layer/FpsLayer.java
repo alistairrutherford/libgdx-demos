@@ -32,8 +32,8 @@ import com.netthreads.libgdx.scene.Layer;
  */
 public class FpsLayer extends Layer
 {
-	private static final String FONT_FILE_SMALL = "data/digital-dreams-bold-16.fnt";
-	private static final String FONT_IMAGE_SMALL = "data/digital-dreams-bold-16.png";
+	private static final String FONT_FILE_SMALL = "data/digital-dream-16.fnt";
+	private static final String FONT_IMAGE_SMALL = "data/digital-dream-16.png";
 
 	private static final String TEXT_FPS = "fps:";
 
