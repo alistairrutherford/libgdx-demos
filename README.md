@@ -19,11 +19,6 @@ simple-shooter
 
 A simple shoot-em-up
 
-**NOTE** 
---------------
-
-I APPEAR TO HAVE INADVERTENTLY DELETED SOME OF THE ASSET FILES FOR THIS APPLICATION. AT THE MOMENT I AM WORKING TOWARDS GETTING THE GAME BACK TO THE SAME LOOK AND FEEL. BEAR WITH ME FOR THE MOMENT.
-
 Menu
 
 ![Demo](https://github.com/alistairrutherford/images/raw/master/simple-shooter1.png) 
