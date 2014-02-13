@@ -19,7 +19,10 @@ simple-shooter
 
 A simple shoot-em-up
 
-**NOTE** Aplogogies I appear to have inadvertently deleted some of the asset files for this application. At the moment it is completely broken. Normal service will be resumed when I find my backups.
+**NOTE** 
+--------------
+
+I APPEAR TO HAVE INADVERTENTLY DELETED SOME OF THE ASSET FILES FOR THIS APPLICATION. AT THE MOMENT IT IS COMPLETELY BROKEN. NORMAL SERVICE WILL BE RESUMED WHEN I FIND MY BACKUPS.
 
 Menu
 
