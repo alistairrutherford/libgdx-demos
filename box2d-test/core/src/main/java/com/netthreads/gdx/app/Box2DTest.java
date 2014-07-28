@@ -121,7 +121,7 @@ public class Box2DTest extends InputAdapter implements ApplicationListener, Acto
 	public void resize(int width, int height)
 	{
 		// Recalculate scale factors for touch events.
-		director.recalcScaleFactors(width, height);
+		director.resize(width, height);
 	}
 
 	/**

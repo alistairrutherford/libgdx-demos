@@ -9,18 +9,12 @@
 	<name>Box2DBumpers Parent</name>
 
 	<properties>
-		<gdx.version>0.9.9-SNAPSHOT</gdx.version>
-		<android.version>2.1.2</android.version>
-		<android.maven.version>3.4.1</android.maven.version>
+		<gdx.version>1.2.0</gdx.version>
+		<android.version>4.1.1.4</android.version>
+		<android.maven.version>3.6.0</android.maven.version>
 		<gwt.version>2.5.0</gwt.version>
+		<netthreads.libgdx.version>1.0.5-SNAPSHOT</netthreads.libgdx.version>
 	</properties>
-
-	<repositories>
-		<repository>
-			<id>gdx-nightlies</id>
-			<url>http://libgdx.badlogicgames.com/nightlies/maven</url>
-		</repository>
-	</repositories>
 
 	<build>
 		<plugins>
@@ -59,5 +53,6 @@
 
 	<modules>
 		<module>core</module>
+		<module>desktop</module>
 	</modules>
 </project>

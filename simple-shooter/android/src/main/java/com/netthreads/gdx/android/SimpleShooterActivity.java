@@ -15,7 +15,7 @@ public class SimpleShooterActivity extends AndroidApplication
 	{
 		super.onCreate(savedInstanceState);
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
-		config.useGL20 = true;
+		
 		initialize(new SimpleShooter(), config);
 	}
 }

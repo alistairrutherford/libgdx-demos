@@ -1,6 +1,6 @@
 /*
  * -----------------------------------------------------------------------
- * Copyright 2012 - Alistair Rutherford - www.netthreads.co.uk
+ * Copyright 2014 - Alistair Rutherford - www.netthreads.co.uk
  * -----------------------------------------------------------------------
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -121,7 +121,7 @@ public class AboutLayer extends Layer
 		// ---------------------------------------------------------------
 		table = new Table();
 
-		table.size((int) getWidth(), (int) getHeight());
+		table.setSize((int) getWidth(), (int) getHeight());
 
 		table.row();
 		table.add(urlLabel).expandY().expandX();

@@ -1,6 +1,6 @@
 /*
  * -----------------------------------------------------------------------
- * Copyright 2012 - Alistair Rutherford - www.netthreads.co.uk
+ * Copyright 2014 - Alistair Rutherford - www.netthreads.co.uk
  * -----------------------------------------------------------------------
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -106,6 +106,7 @@ public class SimpleShooter extends InputAdapter implements ApplicationListener, 
 		// Load/Re-load sounds.
 		soundCache.load(AppSoundDefinitions.SOUNDS);
 		
+		// Get initial scene
 		menuScene = getMenuScene();
 		
 		director.setScene(menuScene);
@@ -118,8 +119,8 @@ public class SimpleShooter extends InputAdapter implements ApplicationListener, 
 	@Override
 	public void resize(int width, int height)
 	{
-		// Recalculate scale factors for touch events.
-		director.recalcScaleFactors(width, height);
+		// Resize view-port and recalculate scale factors for touch events.
+		director.resize(width, height);
 	}
 	
 	/**

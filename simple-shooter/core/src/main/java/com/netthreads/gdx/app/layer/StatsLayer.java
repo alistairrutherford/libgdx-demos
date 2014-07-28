@@ -20,8 +20,8 @@
 package com.netthreads.gdx.app.layer;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.netthreads.gdx.app.core.AppStats;
 import com.netthreads.libgdx.director.AppInjector;
 import com.netthreads.libgdx.scene.Layer;
@@ -67,7 +67,7 @@ public class StatsLayer extends Layer
 	}
 
 	@Override
-	public void draw(SpriteBatch batch, float parentAlpha)
+	public void draw(Batch batch, float parentAlpha)
 	{
 		textStringBuilder.setLength(0);
 		textStringBuilder.append(TEXT_SCORE);

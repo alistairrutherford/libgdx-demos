@@ -3,7 +3,7 @@ package com.netthreads.gdx.app.sprite;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.Batch;
 
 /**
  * Displays position.
@@ -45,7 +45,7 @@ public class PositionLabelSprite extends TextSprite
 	 * 
 	 */
 	@Override
-	public void draw(SpriteBatch batch, float parentAlpha)
+	public void draw(Batch batch, float parentAlpha)
 	{
 		StringBuilder text = getText();
 		text.setLength(0);

@@ -13,11 +13,11 @@
 	<name>Box2DBumpers Core</name>
 
 	<dependencies>
-		<dependency>
-			<groupId>com.badlogic.gdx</groupId>
-			<artifactId>gdx</artifactId>
-			<version>${gdx.version}</version>
-		</dependency>
+        <dependency>
+            <groupId>com.badlogicgames.gdx</groupId>
+            <artifactId>gdx</artifactId>
+            <version>${gdx.version}</version>
+        </dependency>
         
         <!-- General -->
 
@@ -31,7 +31,7 @@
         <dependency>
             <groupId>com.netthreads.libgdx</groupId>
             <artifactId>netthreads-libgdx</artifactId>
-            <version>1.0.4-SNAPSHOT</version>
+            <version>${netthreads.libgdx.version}</version>
         </dependency>
                 
         <!-- General -->

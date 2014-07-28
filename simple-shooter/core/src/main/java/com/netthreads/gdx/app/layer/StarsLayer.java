@@ -21,7 +21,7 @@ package com.netthreads.gdx.app.layer;
 
 import com.badlogic.gdx.Input.Orientation;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.netthreads.gdx.app.definition.AppTextureDefinitions;
 import com.netthreads.gdx.app.sprite.BackgroundSprite;
 import com.netthreads.libgdx.director.AppInjector;
@@ -90,7 +90,7 @@ public class StarsLayer extends Layer
 	 * 
 	 */
 	@Override
-	public void draw(SpriteBatch batch, float parentAlpha)
+	public void draw(Batch batch, float parentAlpha)
 	{
 		backGroundSprite.draw(batch, parentAlpha);
 	}

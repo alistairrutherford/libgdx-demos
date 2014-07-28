@@ -1,6 +1,6 @@
 /*
  * -----------------------------------------------------------------------
- * Copyright 2012 - Alistair Rutherford - www.netthreads.co.uk
+ * Copyright 2014 - Alistair Rutherford - www.netthreads.co.uk
  * -----------------------------------------------------------------------
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -108,7 +108,7 @@ public class SettingsLayer extends Layer
 
 		final CheckBox checkBox = new CheckBox("", skin);
 		checkBox.setChecked(applicationProperties.isAudioOn());
-		checkBox.size(20, 20);
+		checkBox.setSize(20, 20);
 
 		final Label soundLabel = new Label(TEXT_SOUND, skin, URL_LABEL_FONT_NORMAL, Color.WHITE);
 

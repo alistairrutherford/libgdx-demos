@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.netthreads.gdx</groupId>
 		<artifactId>simple-shooter</artifactId>
-		<version>1.0.8-SNAPSHOT</version>
+		<version>1.0.9-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>simple-shooter-android</artifactId>
@@ -26,20 +26,26 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.badlogic.gdx</groupId>
+			<groupId>com.badlogicgames.gdx</groupId>
+			<artifactId>gdx-backend-gwt</artifactId>
+			<version>${gdx.version}</version>
+		</dependency>
+
+		<dependency>
+            <groupId>com.badlogicgames.gdx</groupId>
 			<artifactId>gdx-backend-android</artifactId>
 			<version>${gdx.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>com.badlogic.gdx</groupId>
+            <groupId>com.badlogicgames.gdx</groupId>
 			<artifactId>gdx-platform</artifactId>
 			<version>${gdx.version}</version>
 			<classifier>natives-armeabi</classifier>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.badlogic.gdx</groupId>
+            <groupId>com.badlogicgames.gdx</groupId>
 			<artifactId>gdx-platform</artifactId>
 			<version>${gdx.version}</version>
 			<classifier>natives-armeabi-v7a</classifier>

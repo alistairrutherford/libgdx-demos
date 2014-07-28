@@ -42,7 +42,7 @@ import com.netthreads.libgdx.texture.TextureDefinition;
  */
 public class AboutLayer extends Layer
 {
-	private static final String UI_FILE = "data/uiskin32.json";
+	private static final String UI_FILE = "data/uiskin.json";
 	private static final String URL_LABEL_FONT = "default-font";
 
 	private Table table;
@@ -121,7 +121,7 @@ public class AboutLayer extends Layer
 		// ---------------------------------------------------------------
 		table = new Table();
 
-		table.size((int) getWidth(), (int) getHeight());
+		table.setSize((int) getWidth(), (int) getHeight());
 
 		table.row();
 		table.add(urlLabel).expandY().expandX();

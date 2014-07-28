@@ -105,7 +105,7 @@ public class Box2DBumpers extends InputAdapter implements ApplicationListener, A
 	public void resize(int width, int height)
 	{
 		// Recalculate scale factors for touch events.
-		director.recalcScaleFactors(width, height);
+		director.resize(width, height);
 	}
 
 	/**

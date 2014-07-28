@@ -29,6 +29,9 @@ public class SimpleShooterDesktop
 	public static void main(String[] args)
 	{
 		// last parameter false = use OpenGL 1.1 and not 2.1+
-		new LwjglApplication(new SimpleShooter(), APPLICATION_NAME, SimpleShooter.DEFAULT_WIDTH, SimpleShooter.DEFAULT_HEIGHT, false);
+		new LwjglApplication(new SimpleShooter(), 
+				APPLICATION_NAME, 
+				SimpleShooter.DEFAULT_WIDTH, 
+				SimpleShooter.DEFAULT_HEIGHT);
 	}
 }

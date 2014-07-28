@@ -1,6 +1,6 @@
 package com.netthreads.gdx.app.layer.main;
 
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Pool;
@@ -184,7 +184,7 @@ public class PointerLayer extends Layer implements ActorEventObserver
 	 * Override the draw to position to place our element pointer at the appropriate spot on the view.
 	 */
 	@Override
-	public void draw(SpriteBatch batch, float parentAlpha)
+	public void draw(Batch batch, float parentAlpha)
 	{
 		super.draw(batch, parentAlpha);
 

@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.netthreads.gdx</groupId>
 		<artifactId>simple-shooter</artifactId>
-		<version>1.0.8-SNAPSHOT</version>
+		<version>1.0.9-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>simple-shooter-core</artifactId>
@@ -14,11 +14,11 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.badlogic.gdx</groupId>
+			<groupId>com.badlogicgames.gdx</groupId>
 			<artifactId>gdx</artifactId>
 			<version>${gdx.version}</version>
 		</dependency>
-		
+				
         <!-- General -->
 
         <dependency>
@@ -31,7 +31,13 @@
         <dependency>
             <groupId>com.netthreads.libgdx</groupId>
             <artifactId>netthreads-libgdx</artifactId>
-            <version>1.0.4-SNAPSHOT</version>
+            <version>1.0.5-SNAPSHOT</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>aurelienribon.tweenengine</groupId>
+            <artifactId>tween-engine-api</artifactId>
+            <version>6.3.3</version>
         </dependency>
         
         <!-- General -->

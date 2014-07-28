@@ -22,13 +22,15 @@ package com.netthreads.gdx.java;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.netthreads.gdx.app.Box2DTest;
 
-
 public class Box2DTestDesktop
 {
 	public static void main(String[] args)
 	{
 		// last parameter false = use OpenGL 1.1 and not 2.1+
-		new LwjglApplication(new Box2DTest(), Box2DTest.APPLICATION_NAME, Box2DTest.DEFAULT_WIDTH, Box2DTest.DEFAULT_HEIGHT, false);
-		
+		new LwjglApplication(new Box2DTest(), 
+				Box2DTest.APPLICATION_NAME, 
+				Box2DTest.DEFAULT_WIDTH, 
+				Box2DTest.DEFAULT_HEIGHT);
 	}
+
 }

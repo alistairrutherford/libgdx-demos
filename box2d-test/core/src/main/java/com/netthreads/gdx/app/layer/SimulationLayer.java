@@ -25,7 +25,7 @@ import aurelienribon.box2deditor.FixtureAtlas;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
@@ -201,7 +201,7 @@ public class SimulationLayer extends Layer implements ActorEventObserver
 	 * 
 	 */
 	@Override
-	public void draw(SpriteBatch batch, float parentAlpha)
+	public void draw(Batch batch, float parentAlpha) 
 	{
 		super.draw(batch, parentAlpha);
 
@@ -209,7 +209,7 @@ public class SimulationLayer extends Layer implements ActorEventObserver
 		{
 			world.step(Gdx.app.getGraphics().getDeltaTime(), 3, 3);
 		}
-	}
+	};
 
 	/**
 	 * Handle actor being removed from layer.
