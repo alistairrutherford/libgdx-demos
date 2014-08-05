@@ -21,7 +21,7 @@ A simple shoot-em-up with old-skool moving starfield background and some nice sl
 
 Menu
 
-![Demo](https://github.com/alistairrutherford/images/raw/master/simple-shooter1.png) 
+![Demo](https://github.com/alistairrutherford/images/raw/master/simple-shooter-menu.gif) 
 
 Game Screen
 
