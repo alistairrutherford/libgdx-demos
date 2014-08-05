@@ -17,7 +17,7 @@ https://github.com/alistairrutherford/libgdx-demos/wiki/Changelog
 simple-shooter
 --------------
 
-A simple shoot-em-up
+A simple shoot-em-up with moving starfield background and some nice sliding transitions between screens.
 
 Menu
 
