@@ -56,42 +56,35 @@
 
 	<dependencies>
 
-		<dependency>
-			<groupId>com.badlogicgames.gdx</groupId>
-			<artifactId>gdx</artifactId>
-			<version>${gdx.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.badlogicgames.gdx</groupId>
-			<artifactId>gdx-backend-lwjgl</artifactId>
-			<version>${gdx.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.badlogicgames.gdx</groupId>
-			<artifactId>gdx-platform</artifactId>
+        <dependency>
+            <groupId>com.badlogicgames.gdx</groupId>
+            <artifactId>gdx</artifactId>
             <version>${gdx.version}</version>
-			<classifier>natives-desktop</classifier>
-		</dependency>
+        </dependency>
 
-		<dependency>
-			<groupId>com.google.inject</groupId>
-			<artifactId>guice</artifactId>
-			<version>3.0</version>
-			<classifier>no_aop</classifier>
-		</dependency>
+        <dependency>
+            <groupId>com.badlogicgames.gdx</groupId>
+            <artifactId>gdx-backend-lwjgl</artifactId>
+            <version>${gdx.version}</version>
+        </dependency>
 
-		<dependency>
-			<groupId>aurelienribon.tweenengine</groupId>
-			<artifactId>tween-engine-api</artifactId>
-			<version>6.3.3</version>
-		</dependency>
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>3.0</version>
+            <classifier>no_aop</classifier>
+        </dependency>
 
         <dependency>
             <groupId>com.netthreads.libgdx</groupId>
             <artifactId>netthreads-libgdx</artifactId>
-            <version>1.0.5-SNAPSHOT</version>
+            <version>1.0.4-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>aurelienribon.tweenengine</groupId>
+            <artifactId>tween-engine-api</artifactId>
+            <version>6.3.3</version>
         </dependency>
 
 		<dependency>

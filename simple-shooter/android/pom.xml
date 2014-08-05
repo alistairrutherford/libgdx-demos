@@ -18,7 +18,6 @@
 	
 	<dependencies>
 	    
-	    	    
 		<dependency>
 			<groupId>com.netthreads.gdx</groupId>
 			<artifactId>simple-shooter-core</artifactId>
