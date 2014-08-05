@@ -94,8 +94,7 @@ public class SimpleShooter extends InputAdapter implements ApplicationListener, 
 		appStats = AppInjector.getInjector().getInstance(AppStats.class);
 		
 		// Set initial width and height.
-		director.setWidth(DEFAULT_WIDTH);
-		director.setHeight(DEFAULT_HEIGHT);
+		director.setWidthHeight(DEFAULT_WIDTH, DEFAULT_HEIGHT);
 		
 		// Add this as an event observer.
 		director.registerEventHandler(this);

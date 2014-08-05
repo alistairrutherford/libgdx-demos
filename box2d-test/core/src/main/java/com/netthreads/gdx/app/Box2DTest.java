@@ -98,8 +98,7 @@ public class Box2DTest extends InputAdapter implements ApplicationListener, Acto
 		director.setClearColourB(DEFAULT_CLEAR_COLOUR_BLUE);
 
 		// Set initial width and height.
-		director.setWidth(DEFAULT_WIDTH);
-		director.setHeight(DEFAULT_HEIGHT);
+		director.setWidthHeight(DEFAULT_WIDTH, DEFAULT_HEIGHT);
 
 		// Add this as an event observer.
 		director.registerEventHandler(this);
