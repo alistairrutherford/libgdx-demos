@@ -31,7 +31,7 @@
         <dependency>
             <groupId>com.netthreads.libgdx</groupId>
             <artifactId>netthreads-libgdx</artifactId>
-            <version>1.0.5-SNAPSHOT</version>
+            <version>${netthreads.libgdx.version}</version>
         </dependency>
         
         <dependency>
