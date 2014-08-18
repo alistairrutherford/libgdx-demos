@@ -54,5 +54,6 @@
 	<modules>
 		<module>core</module>
 		<module>desktop</module>
+		<module>android</module>
 	</modules>
 </project>

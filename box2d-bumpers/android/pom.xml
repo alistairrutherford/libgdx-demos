@@ -11,6 +11,10 @@
 	<artifactId>box2d-bumpers-android</artifactId>
 	<packaging>apk</packaging>
 	<name>Box2DBumpers Android</name>
+	
+	<properties>
+		<android.sdk.path>C:/development/java/android/sdk/android-sdk-windows</android.sdk.path>
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -20,20 +24,20 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.badlogic.gdx</groupId>
+            <groupId>com.badlogicgames.gdx</groupId>
 			<artifactId>gdx-backend-android</artifactId>
 			<version>${gdx.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>com.badlogic.gdx</groupId>
+            <groupId>com.badlogicgames.gdx</groupId>
 			<artifactId>gdx-platform</artifactId>
 			<version>${gdx.version}</version>
 			<classifier>natives-armeabi</classifier>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.badlogic.gdx</groupId>
+            <groupId>com.badlogicgames.gdx</groupId>
 			<artifactId>gdx-platform</artifactId>
 			<version>${gdx.version}</version>
 			<classifier>natives-armeabi-v7a</classifier>
@@ -46,6 +50,7 @@
 			<version>${android.version}</version>
 			<scope>provided</scope>
 		</dependency>
+		
 	</dependencies>
 
 	<build>
