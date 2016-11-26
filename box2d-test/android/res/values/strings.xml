@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Box2DTest</string>
+
+    <string name="app_name">box2d-test</string>
+
 </resources>
