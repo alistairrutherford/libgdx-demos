@@ -106,7 +106,7 @@ project(":core") {
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
         compile 'com.netthreads.libgdx:netthreads-libgdx:1.0.5-SNAPSHOT'
-        compile 'aurelienribon.tweenengine:tween-engine-api:6.3.3'
+        compile 'aurelienribon:tweenengine:6.3.3'
         compile group: 'com.google.inject', name: 'guice', version:'3.0', classifier:'no_aop'
     }
 }
